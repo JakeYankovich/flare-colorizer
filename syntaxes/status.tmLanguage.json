@@ -5,7 +5,7 @@
       "match": "Agent \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
       "captures": {
         "0": {
-          "name": "string.blue"
+          "name": "string.cyan"
         },
         "1": {
           "name": "string.version_yellow"
@@ -23,10 +23,10 @@
     },
     {
       "name": "hyphendivers",
-      "match": "-{2,}",
+      "match": "--+",
       "captures": {
         "0":{
-          "name": "string.yellow"
+          "name": "string.version_yellow"
         }
       }
     },
@@ -34,8 +34,8 @@
       "name": "equalsdividers",
       "match": "(==+)",
       "captures": {
-        "1":{
-          "name": "string.yellow"
+        "0":{
+          "name": "string.green"
         }
       }
     },
@@ -62,7 +62,7 @@
       "match": "[0-9]{11,13}",
       "captures": {
         "0": {
-          "name": "string.timestamp_yelow"
+          "name": "string.timestamp_yellow"
         }
       }
     }

@@ -30,7 +30,7 @@
       {
         "scope": "string.cyan",
         "settings": {
-          "foreground": "#11ffff"
+          "foreground": "#99ffff"
         }
       },
       {
@@ -48,7 +48,7 @@
       {
         "scope": "string.timestamp_yellow",
         "settings": {
-          "foreground": "#ffff99"
+          "foreground": "#ffffcc"
         }
       }
     ]
