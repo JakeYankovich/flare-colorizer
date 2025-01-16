@@ -1,0 +1,14 @@
+{
+    "name": "Purple Theme",
+    "type": "dark",
+    "colors": {},
+    "tokenColors": [
+      {
+        "scope": "source.statuslog",
+        "settings": {
+          "foreground": "#a020f0"
+        }
+      }
+    ]
+  }
+  

@@ -37,7 +37,7 @@ module.exports = __toCommonJS(extension_exports);
 var vscode = __toESM(require("vscode"));
 function activate(context) {
   console.log('Congratulations, your extension "flare-colorizer" is now active!');
-  const disposable = vscode.commands.registerCommand("flare-colorizer.helloWorld", () => {
+  const disposable = vscode.commands.registerCommand("flare-colorizer.colorize", () => {
     vscode.window.showInformationMessage("Flare-colorizer has been loaded! DATADOGS UNITE!!!");
   });
   context.subscriptions.push(disposable);

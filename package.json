@@ -10,20 +10,35 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:flare-colorizer.helloWorld"
+    "onFileSystem:status.log"
   ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "flare-colorizer.helloWorld", 
-        "title": "Hello World"
+        "command": "flare-colorizer.colorize", 
+        "title": "colorize"
       }
-    ]
+    ],
+    "grammars": [
+    {
+      "scopeName": "source.statuslog",
+      "path": "./syntaxes/statuslog.tmLanguage.json",
+      "fileTypes": [],
+      "language": "log",
+      "pattern": "status.log" 
+    }
+  ],
+  "themes": [
+    {
+      "label": "Purple Theme",
+      "uiTheme": "vs-dark",
+      "path": "./themes/purple-theme.json"
+    }
+  ]
   },
   "scripts": {
     "install": "npm install",
-    "test": "node test.js",
     "start": "node index.js",
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",

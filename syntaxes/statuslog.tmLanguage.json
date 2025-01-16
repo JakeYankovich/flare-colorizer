@@ -1,0 +1,10 @@
+{
+    "scopeName": "source.statuslog",
+    "patterns": [
+      {
+        "name": "meta.section.header.purple",
+        "match": "^={15}\\nAgent \\(v[\\d.]+\\)\\n={15}$"
+      }
+    ]
+  }
+  
