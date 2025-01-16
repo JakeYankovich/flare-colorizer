@@ -16,21 +16,39 @@
         }
       },
       {
-        "scope": "string.red_error",
+        "scope": "string.error_red",
         "settings": {
           "foreground": "#ff0000"
         }
       },
       {
-        "scope": "string.blue",
+        "scope": "string.green",
+        "settings": {
+          "foreground": "#77ffaa"
+        }
+      },
+      {
+        "scope": "string.cyan",
         "settings": {
           "foreground": "#11ffff"
         }
       },
       {
-        "scope": "string.yellow_version",
+        "scope": "string.navyblue",
+        "settings": {
+          "foreground": "#22ccff"
+        }
+      },
+      {
+        "scope": "string.version_yellow",
         "settings": {
           "foreground": "#ffff00"
+        }
+      },
+      {
+        "scope": "string.timestamp_yellow",
+        "settings": {
+          "foreground": "#ffff99"
         }
       }
     ]

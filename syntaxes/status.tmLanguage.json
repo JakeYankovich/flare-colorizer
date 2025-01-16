@@ -8,7 +8,61 @@
           "name": "string.blue"
         },
         "1": {
-          "name": "string.yellow_version"
+          "name": "string.version_yellow"
+        }
+      }
+    },
+    {
+      "name": "OK",
+      "match": "\\[OK\\]",
+      "captures": {
+        "0": {
+          "name": "string.green"
+        }
+      }
+    },
+    {
+      "name": "hyphendivers",
+      "match": "-{2,}",
+      "captures": {
+        "0":{
+          "name": "string.yellow"
+        }
+      }
+    },
+    {
+      "name": "equalsdividers",
+      "match": "(==+)",
+      "captures": {
+        "1":{
+          "name": "string.yellow"
+        }
+      }
+    },
+    {
+      "name": "windows",
+      "match": "Windows|windows",
+      "captures": {
+        "0": {
+          "name": "string.navyblue"
+        }
+      }
+    },
+    {
+      "name": "keyname",
+      "match": "^(.*?):",
+      "captures": {
+        "1": {
+          "name": "string.cyan"
+        }
+      }
+    },
+    {
+      "name": "timestamp",
+      "match": "[0-9]{11,13}",
+      "captures": {
+        "0": {
+          "name": "string.timestamp_yelow"
         }
       }
     }
