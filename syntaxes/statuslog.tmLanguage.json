@@ -1,10 +1,13 @@
 {
-    "scopeName": "source.statuslog",
-    "patterns": [
-      {
-        "name": "meta.section.header.purple",
-        "match": "^={15}\\nAgent \\(v[\\d.]+\\)\\n={15}$"
-      }
-    ]
-  }
-  
+  "patterns": [
+    {
+      "name": "link.statuslog",
+      "match": "Agent"
+    }
+  ],
+  "repository": {},
+  "fileTypes": ["log"],
+  "name": "Status Log",
+  "scopeName": "link.statuslog"
+}
+

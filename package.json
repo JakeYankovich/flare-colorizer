@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onFileSystem:status.log"
+    ".*"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -20,13 +20,24 @@
         "title": "colorize"
       }
     ],
+    "languages": [{
+      "id": "status language",
+      "extensions": ["status.log"]
+    },
+    {
+      "id": "secrets language",
+      "extensions": ["secrets.log"]
+    }],
     "grammars": [
     {
-      "scopeName": "source.statuslog",
-      "path": "./syntaxes/statuslog.tmLanguage.json",
-      "fileTypes": [],
-      "language": "log",
-      "pattern": "status.log" 
+      "language": "status language",
+      "scopeName": "link.statuslog",
+      "path": "./syntaxes/statuslog.tmLanguage.json"
+    },
+    {
+      "language": "secrets language",
+      "scopeName": "secrets.statuslog",
+      "path": "./syntaxes/secretslog.tmLanguage.json"
     }
   ],
   "themes": [
