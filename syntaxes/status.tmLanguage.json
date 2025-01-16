@@ -1,8 +1,16 @@
 {
   "patterns": [
     {
-      "name": "pattern",
-      "match": "Agent"
+      "name": "agentversion",
+      "match": "Agent \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
+      "captures": {
+        "0": {
+          "name": "string.blue"
+        },
+        "1": {
+          "name": "string.yellow_version"
+        }
+      }
     }
   ],
   "repository": {},
