@@ -9,17 +9,22 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onCommand:flare-colorizer.helloWorld"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "flare-colorizer.helloWorld",
+        "command": "flare-colorizer.helloWorld", 
         "title": "Hello World"
       }
     ]
   },
   "scripts": {
+    "install": "npm install",
+    "test": "node test.js",
+    "start": "node index.js",
     "vscode:prepublish": "npm run package",
     "compile": "npm run check-types && npm run lint && node esbuild.js",
     "watch": "npm-run-all -p watch:*",
