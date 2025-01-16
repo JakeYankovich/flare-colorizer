@@ -1,13 +1,13 @@
 {
   "patterns": [
     {
-      "name": "link.statuslog",
+      "name": "pattern",
       "match": "Agent"
     }
   ],
   "repository": {},
   "fileTypes": ["log"],
   "name": "Status Log",
-  "scopeName": "link.statuslog"
+  "scopeName": "link.status"
 }
 

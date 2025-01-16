@@ -31,20 +31,20 @@
     "grammars": [
     {
       "language": "status language",
-      "scopeName": "link.statuslog",
-      "path": "./syntaxes/statuslog.tmLanguage.json"
+      "scopeName": "link.status",
+      "path": "./syntaxes/status.tmLanguage.json"
     },
     {
       "language": "secrets language",
-      "scopeName": "secrets.statuslog",
-      "path": "./syntaxes/secretslog.tmLanguage.json"
+      "scopeName": "link.secrets",
+      "path": "./syntaxes/secrets.tmLanguage.json"
     }
   ],
   "themes": [
     {
-      "label": "Purple Theme",
+      "label": "Flare Theme",
       "uiTheme": "vs-dark",
-      "path": "./themes/purple-theme.json"
+      "path": "./themes/flare-theme.json"
     }
   ]
   },
