@@ -26,7 +26,7 @@
       "match": "\\[OK\\]",
       "captures": {
         "0": {
-          "name": "string.green"
+          "name": "string.version_yellow"
         }
       }
     },
@@ -44,7 +44,7 @@
       "match": "(==+)",
       "captures": {
         "0":{
-          "name": "string.green"
+          "name": "string.version_yellow"
         }
       }
     },
