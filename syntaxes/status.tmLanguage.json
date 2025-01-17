@@ -13,6 +13,15 @@
       }
     },
     {
+      "name": "header1",
+      "match": "Collector|JMXFetch|Forwarder|Endpoints|APM\\sAgent|Logs\\sAgent|Aggregator|Process\\sAgent|DogStatsD|OTLP",
+      "captures": {
+        "0":{
+          "name": "string.header1"
+        }
+      }
+    },
+    {
       "name": "OK",
       "match": "\\[OK\\]",
       "captures": {
@@ -41,7 +50,7 @@
     },
     {
       "name": "windows",
-      "match": "Windows|windows",
+      "match": "\\b(windows|Windows)\\b(?!_)",
       "captures": {
         "0": {
           "name": "string.navyblue"

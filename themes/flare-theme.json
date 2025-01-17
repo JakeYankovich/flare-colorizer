@@ -6,7 +6,7 @@
       {
         "scope": "link.status",
         "settings": {
-          "foreground": "#f0d5f5"
+          "foreground": "#cccccc"
         }
       },
       {
@@ -24,13 +24,21 @@
       {
         "scope": "string.green",
         "settings": {
-          "foreground": "#77ffaa"
+          "foreground": "#77ffbb"
         }
       },
       {
         "scope": "string.cyan",
         "settings": {
           "foreground": "#99ffff"
+        }
+      },
+      {
+        "scope": "string.header1",
+        "settings": {
+          "foreground": "#ffdd00",
+          "fontStyle": "bold underline",
+          "fontWeight": "bolder"
         }
       },
       {
