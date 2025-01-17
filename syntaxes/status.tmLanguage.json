@@ -8,16 +8,34 @@
           "name": "string.cyan"
         },
         "1": {
-          "name": "string.version_yellow"
+          "name": "string.green"
         }
       }
     },
     {
       "name": "header1",
-      "match": "Collector|JMXFetch|Forwarder|Endpoints|APM\\sAgent|Logs\\sAgent|Aggregator|Process\\sAgent|DogStatsD|OTLP",
+      "match": "Collector$|JMXFetch$|JMX\\sFetch$|Forwarder|^Endpoints|APM\\sAgent|Logs\\sAgent|Aggregator|Process\\sAgent|DogStatsD|OTLP|Remote\\sConfiguration$",
       "captures": {
         "0":{
           "name": "string.header1"
+        }
+      }
+    },
+    {
+      "name": "evilheader1",
+      "match": "Config\\sErrors|Loading\\sErrors|ERROR|Error:",
+      "captures": {
+        "0":{
+          "name": "string.evilheader1"
+        }
+      }
+    },
+    {
+      "name": "header2",
+      "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers",
+      "captures": {
+        "0":{
+          "name": "string.header2"
         }
       }
     },
@@ -26,7 +44,7 @@
       "match": "\\[OK\\]",
       "captures": {
         "0": {
-          "name": "string.version_yellow"
+          "name": "string.green"
         }
       }
     },
@@ -35,7 +53,7 @@
       "match": "--+",
       "captures": {
         "0":{
-          "name": "string.version_yellow"
+          "name": "string.green"
         }
       }
     },
@@ -44,7 +62,7 @@
       "match": "(==+)",
       "captures": {
         "0":{
-          "name": "string.version_yellow"
+          "name": "string.green"
         }
       }
     },
@@ -59,7 +77,7 @@
     },
     {
       "name": "keyname",
-      "match": "^(.*?):",
+      "match": "^(.*?):\\s",
       "captures": {
         "1": {
           "name": "string.cyan"

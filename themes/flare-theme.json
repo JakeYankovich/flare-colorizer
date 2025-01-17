@@ -42,6 +42,21 @@
         }
       },
       {
+        "scope": "string.header2",
+        "settings": {
+          "foreground": "#ffdd00",
+          "fontStyle": "italic"
+        }
+      },
+      {
+        "scope": "string.evilheader1",
+        "settings": {
+          "foreground": "#ff0000",
+          "fontStyle": "bold underline",
+          "fontWeight": "bolder"
+        }
+      },
+      {
         "scope": "string.navyblue",
         "settings": {
           "foreground": "#22ccff"
