@@ -2,19 +2,22 @@
   "patterns": [
     {
       "name": "agentversion",
-      "match": "Agent \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
+      "match": "(Agent) \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
       "captures": {
         "0": {
-          "name": "string.cyan"
+          "name": "string.future_pink"
         },
         "1": {
+          "name": "string.version_yellow"
+        },
+        "2": {
           "name": "string.green"
         }
       }
     },
     {
       "name": "header1",
-      "match": "Collector$|JMXFetch$|JMX\\sFetch$|Forwarder|^Endpoints|APM\\sAgent|Logs\\sAgent|Aggregator|Process\\sAgent|DogStatsD|OTLP|Remote\\sConfiguration$",
+      "match": "^Transport\\sProxy\\sWarnings|Autodiscovery|^Datadog\\sCluster\\sAgent|Collector$|JMXFetch$|JMX\\sFetch$|Forwarder|^Endpoints|APM\\sAgent|Logs\\sAgent$|Aggregator|Process\\sAgent|DogStatsD|OTLP|Remote\\sConfiguration$|System\\sProbe",
       "captures": {
         "0":{
           "name": "string.header1"
@@ -23,7 +26,16 @@
     },
     {
       "name": "evilheader1",
-      "match": "Config\\sErrors|Loading\\sErrors|ERROR|Error:",
+      "match": "Config\\sErrors|Loading\\sErrors|(\\[ERROR\\])|\\sError|ERROR|Error:",
+      "captures": {
+        "0":{
+          "name": "string.evilheader1"
+        }
+      }
+    },
+    {
+      "name": "num errors:",
+      "match": "^.*Errors:\\s([1-9]{1,5})",
       "captures": {
         "0":{
           "name": "string.evilheader1"
@@ -32,7 +44,7 @@
     },
     {
       "name": "header2",
-      "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers",
+      "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers|Process\\sComponent$|Extractors$",
       "captures": {
         "0":{
           "name": "string.header2"
@@ -62,13 +74,13 @@
       "match": "(==+)",
       "captures": {
         "0":{
-          "name": "string.green"
+          "name": "string.future_pink"
         }
       }
     },
     {
       "name": "windows",
-      "match": "\\b(windows|Windows)\\b(?!_)",
+      "match": "Windows\\sServer\\s[0-9]{4}|\\b(windows|Windows)\\b(?!_)",
       "captures": {
         "0": {
           "name": "string.navyblue"
@@ -76,8 +88,17 @@
       }
     },
     {
+      "name": "linux",
+      "match": "linux|Linux|ubuntu|debian|rhel",
+      "captures": {
+        "0": {
+          "name": "string.os_orange"
+        }
+      }
+    },
+    {
       "name": "keyname",
-      "match": "^(.*?):\\s",
+      "match": "^(?!Error:)\\s(.*?):\\s",
       "captures": {
         "1": {
           "name": "string.cyan"

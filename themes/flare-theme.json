@@ -6,7 +6,7 @@
       {
         "scope": "link.status",
         "settings": {
-          "foreground": "#cccccc"
+          "foreground": "#dddddd"
         }
       },
       {
@@ -66,6 +66,18 @@
         "scope": "string.version_yellow",
         "settings": {
           "foreground": "#ffff00"
+        }
+      },
+      {
+        "scope": "string.future_pink",
+        "settings": {
+          "foreground": "#ffaabb"
+        }
+      },
+      {
+        "scope": "string.os_orange",
+        "settings": {
+          "foreground": "#ffaa77"
         }
       },
       {
