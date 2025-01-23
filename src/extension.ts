@@ -37,19 +37,18 @@ export function activate(context: vscode.ExtensionContext) {
                         const diffTime = Math.abs(currentDate.getTime() - releaseDate.getTime());
                         const diffMonths = diffTime / (1000 * 60 * 60 * 24 * 30);
 
-                        let scopeName = 'string.blue';
+                        let scopeName = 'string.version_placeholder';
                         if (diffMonths <= 2) {
-                            scopeName = 'string.green';
+                            scopeName = 'string.version_green';
                         } else if (diffMonths <= 6) {
                             scopeName = 'string.version_yellow';
                         } else {
-                            scopeName = 'string.error_red';
+                            scopeName = 'string.version_red';
                         }
 
                         console.log(`Scope for version ${agentVersion}:`, scopeName);
                         // Define the array of possible scopes
 
-                        //THIS IS BAD! ITS CHANGIzNG EVERYTHING THAT USES THESE COLORS. NEED BETTER LOGIC
                         const possibleScopes = [
                             'string.version_placeholder',
                             'string.version_red',
@@ -57,13 +56,25 @@ export function activate(context: vscode.ExtensionContext) {
                             'string.version_green'
                         ];
 
-                        // Update the TextMate grammar file with the correct scope
+                        // Update the TextMate grammar file with the correct scope for capture group 2
                         const grammarFilePath = path.join(__dirname, '..', 'syntaxes', 'status.tmLanguage.json');
                         let grammarContent = fs.readFileSync(grammarFilePath, 'utf-8');
-                        possibleScopes.forEach(scope => {
-                            const regex = new RegExp(`("2":\\s*\\{\\s*"name":\\s*")${scope}(")`, 'g');
-                            grammarContent = grammarContent.replace(regex, `$1${scopeName}$2`);
+                        let grammarJson = JSON.parse(grammarContent);
+
+                        // Iterate through all patterns and captures
+                        grammarJson.patterns.forEach((pattern: any) => {
+                            if (pattern.captures) {
+                                Object.keys(pattern.captures).forEach((captureGroup) => {
+                                    const capture = pattern.captures[captureGroup];
+                                    if (possibleScopes.includes(capture.name)) {
+                                        capture.name = scopeName;
+                                    }
+                                });
+                            }
                         });
+
+                        // Convert JSON back to string
+                        grammarContent = JSON.stringify(grammarJson, null, 2);
                         // console.log('Updated grammar content:', grammarContent); // Log the updated content
                         fs.writeFileSync(grammarFilePath, grammarContent, 'utf-8');
 
