@@ -2,7 +2,7 @@
   "patterns": [
     {
       "name": "agentversion",
-      "match": "(Agent) \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
+      "match": "(Agent|Datadog Cluster Agent) \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
       "captures": {
         "0": {
           "name": "string.future_pink"
@@ -35,9 +35,9 @@
     },
     {
       "name": "num errors:",
-      "match": "^.*Errors:\\s([1-9]{1,5})",
+      "match": "^.*(Errors:)\\s([1-9]{1,5})",
       "captures": {
-        "0": {
+        "2": {
           "name": "string.evilheader1"
         }
       }
@@ -98,7 +98,7 @@
     },
     {
       "name": "keyname",
-      "match": "^(?!(Error|  hostname):)\\s(.*?):\\s",
+      "match": "^(?!(Error|  hostname|    hostname):)(.*?):\\s",
       "captures": {
         "0": {
           "name": "string.cyan"
