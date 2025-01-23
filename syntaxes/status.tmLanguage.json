@@ -98,10 +98,22 @@
     },
     {
       "name": "keyname",
-      "match": "^(?!Error:)\\s(.*?):\\s",
+      "match": "^(?!(Error|  hostname):)\\s(.*?):\\s",
       "captures": {
-        "1": {
+        "0": {
           "name": "string.cyan"
+        }
+      }
+    },
+    {
+      "name": "hostname",
+      "match": "hostname: (.*)",
+      "captures": {
+        "0": {
+          "name": "string.cyan"
+        },
+        "1": {
+          "name": "string.os_orange"
         }
       }
     },

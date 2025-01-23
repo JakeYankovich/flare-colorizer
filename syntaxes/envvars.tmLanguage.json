@@ -1,0 +1,54 @@
+{
+  "patterns": [
+    {
+      "name": "found vars",
+      "match": "Found the following envvars:",
+      "captures": {
+        "0": {
+          "name": "string.header1"
+        }
+      }
+    },
+    {
+      "name": "DD var",
+      "match": "(-)  (DD_.*)=(.*)",
+      "captures": {
+        "0": {
+          "name": "string.future_pink"
+        },
+        "1": {
+          "name": "string.future_pink"
+        },
+        "2": {
+          "name": "string.cyan"
+        },
+        "3": {
+          "name": "string.green"
+        }
+      }
+    },
+    {
+      "name": "nonDD var",
+      "match": "(-)  (?!DD_)(.*)=(.*)",
+      "captures": {
+        "0": {
+          "name": "string.future_pink"
+        },
+        "1": {
+          "name": "string.future_pink"
+        },
+        "2": {
+          "name": "string.navyblue"
+        },
+        "3": {
+          "name": "string.green"
+        }
+      }
+    }
+  ],
+  "repository": {},
+  "fileTypes": ["log"],
+  "name": "envvars Log",
+  "scopeName": "link.envvars"
+}
+

@@ -32,6 +32,10 @@
     {
       "id": "configcheck language",
       "extensions": ["config-check.log"]
+    },
+    {
+      "id": "envvars language",
+      "extensions": ["envvars.log"]
     }
   ],
     "grammars": [
@@ -49,6 +53,11 @@
       "language": "configcheck language",
       "scopeName": "link.configcheck",
       "path": "./syntaxes/configcheck.tmLanguage.json"
+    },
+    {
+      "language": "envvars language",
+      "scopeName": "link.envvars",
+      "path": "./syntaxes/envvars.tmLanguage.json"
     }
   ],
   "themes": [
