@@ -8,14 +8,10 @@
           "name": "string.future_pink"
         },
         "1": {
-<<<<<<< Updated upstream
           "name": "string.extra_yellow"
         },
         "2": {
           "name": "string.version_green"
-=======
-          "name": "string.error_red"
->>>>>>> Stashed changes
         }
       }
     },
@@ -63,11 +59,7 @@
       "match": "\\[OK\\]",
       "captures": {
         "0": {
-<<<<<<< Updated upstream
           "name": "string.green"
-=======
-          "name": "string.error_red"
->>>>>>> Stashed changes
         }
       }
     },
@@ -75,13 +67,8 @@
       "name": "hyphendivers",
       "match": "--+",
       "captures": {
-<<<<<<< Updated upstream
         "0": {
           "name": "string.green"
-=======
-        "0":{
-          "name": "string.error_red"
->>>>>>> Stashed changes
         }
       }
     },
@@ -89,13 +76,8 @@
       "name": "equalsdividers",
       "match": "(==+)",
       "captures": {
-<<<<<<< Updated upstream
         "0": {
           "name": "string.future_pink"
-=======
-        "0":{
-          "name": "string.error_red"
->>>>>>> Stashed changes
         }
       }
     },
