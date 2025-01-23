@@ -26,6 +26,10 @@
       "extensions": ["status.log"]
     },
     {
+      "id": "logs language",
+      "extensions": ["agent.log", "process-agent.log", "system-probe.log", "trace-agent.log"]
+    },
+    {
       "id": "secrets language",
       "extensions": ["secrets.log"]
     },
@@ -43,6 +47,11 @@
       "language": "status language",
       "scopeName": "link.status",
       "path": "./syntaxes/status.tmLanguage.json"
+    },
+    {
+      "language": "logs language",
+      "scopeName": "link.log",
+      "path": "./syntaxes/logs.tmLanguage.json"
     },
     {
       "language": "secrets language",
