@@ -49,23 +49,22 @@ export function activate(context: vscode.ExtensionContext) {
                         console.log(`Scope for version ${agentVersion}:`, scopeName);
                         // Define the array of possible scopes
 
-                        //THIS IS BAD! ITS CHANGING EVERYTHING THAT USES THESE COLORS. NEED BETTER LOGIC
+                        //THIS IS BAD! ITS CHANGIzNG EVERYTHING THAT USES THESE COLORS. NEED BETTER LOGIC
                         const possibleScopes = [
-                            'string.placeholder_version',
-                            'string.error_red',
-                            'string.blue',
+                            'string.version_placeholder',
+                            'string.version_red',
                             'string.version_yellow',
-                            'string.green'
+                            'string.version_green'
                         ];
 
                         // Update the TextMate grammar file with the correct scope
                         const grammarFilePath = path.join(__dirname, '..', 'syntaxes', 'status.tmLanguage.json');
                         let grammarContent = fs.readFileSync(grammarFilePath, 'utf-8');
                         possibleScopes.forEach(scope => {
-                            const regex = new RegExp(`"${scope}"`, 'g');
-                            grammarContent = grammarContent.replace(regex, `"${scopeName}"`);
+                            const regex = new RegExp(`("2":\\s*\\{\\s*"name":\\s*")${scope}(")`, 'g');
+                            grammarContent = grammarContent.replace(regex, `$1${scopeName}$2`);
                         });
-                        console.log('Updated grammar content:', grammarContent); // Log the updated content
+                        // console.log('Updated grammar content:', grammarContent); // Log the updated content
                         fs.writeFileSync(grammarFilePath, grammarContent, 'utf-8');
 
                         // Reload the window to apply the changes

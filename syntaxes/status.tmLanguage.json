@@ -8,10 +8,10 @@
           "name": "string.future_pink"
         },
         "1": {
-          "name": "string.version_yellow"
+          "name": "string.version_placeholder"
         },
         "2": {
-          "name": "string.green"
+          "name": "string.error_red"
         }
       }
     },
