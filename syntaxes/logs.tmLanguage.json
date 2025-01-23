@@ -1,0 +1,56 @@
+{
+    "patterns": [
+      {
+        "name": "INFO Level Log Line",
+        "match": "INFO",
+        "captures": {
+          "0": {
+            "name": "string.navyblue"
+          }
+        }
+      },
+      {
+        "name": "WARN Level Log Line",
+        "match": "WARN",
+        "captures": {
+          "0": {
+            "name": "string.timestamp_yellow"
+          }
+        }
+      },
+      {
+        "name": "ERROR Level Log Line",
+        "match": "ERROR",
+        "captures": {
+          "0": {
+            "name": "string.error_red"
+          }
+        }
+      },
+      {
+        "name": "DEBUG Level Log Line",
+        "match": "DEBUG",
+        "captures": {
+          "0": {
+            "name": "string.datadog_purple"
+          }
+        }
+      },
+      {
+        "name": "Sysprobe test Level Log Line",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (INFO) \\|",
+        "captures": {
+          "1": {
+            "name": "string.os_orange"
+          },
+          "2": {
+            "name": "string.navyblue"
+          }
+        }
+      }
+    ],
+    "repository": {},
+    "fileTypes": ["log"],
+    "name": "Secrets Log",
+    "scopeName": "link.log"
+  }
