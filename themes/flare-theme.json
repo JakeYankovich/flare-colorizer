@@ -24,7 +24,7 @@
       {
         "scope": "string.error_red",
         "settings": {
-          "foreground": "#ff0000"
+          "foreground": "#ff4444"
         }
       },
       {

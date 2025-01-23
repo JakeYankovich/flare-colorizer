@@ -40,6 +40,10 @@
     {
       "id": "envvars language",
       "extensions": ["envvars.log"]
+    },
+    {
+      "id": "diagnose language",
+      "extensions": ["diagnose.log"]
     }
   ],
     "grammars": [
@@ -67,6 +71,11 @@
       "language": "envvars language",
       "scopeName": "link.envvars",
       "path": "./syntaxes/envvars.tmLanguage.json"
+    },
+    {
+      "language": "diagnose language",
+      "scopeName": "link.diagnose",
+      "path": "./syntaxes/diagnose.tmLanguage.json"
     }
   ],
   "themes": [

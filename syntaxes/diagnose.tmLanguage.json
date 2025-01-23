@@ -1,0 +1,135 @@
+{
+  "patterns": [
+    {
+      "name": "equalsdividers",
+      "match": "===> (FAIL)",
+      "captures": {
+        "0": {
+          "name": "string.extra_yellow"
+        },
+        "1": {
+          "name": "string.error_red"
+        }
+      }
+    }, 
+    {
+      "name": "equalsdividers",
+      "match": "===> (PASS)",
+      "captures": {
+        "0": {
+          "name": "string.extra_yellow"
+        },
+        "1": {
+          "name": "string.green"
+        }
+      }
+    },
+    {
+      "name": "=headers=",
+      "match": "(===)\\s.*\\s(===)",
+      "captures": {
+        "0": {
+          "name": "string.cyan"
+        },
+        "1": {
+          "name": "string.extra_yellow"
+        },
+        "2": {
+          "name": "string.extra_yellow"
+        }
+      }
+    },
+    {
+      "name": "=====",
+      "match": "====+",
+      "captures": {
+        "0": {
+          "name": "string.extra_yellow"
+        }
+      }
+    },
+    {
+      "name": "----",
+      "match": ".*----+",
+      "captures": {
+        "0": {
+          "name": "string.extra_yellow"
+        }
+      }
+    },
+    {
+      "name": "PASS ...",
+      "match": "(PASS).*",
+      "captures": {
+        "1": {
+          "name": "string.green"
+        }
+      }
+    },
+    {
+      "name": "Diagnosis ...",
+      "match": "(Diagnosis).*",
+      "captures": {
+        "1": {
+          "name": "string.datadog_purple"
+        }
+      }
+    },
+    {
+      "name": "FAIL ...",
+      "match": "(FAIL).*",
+      "captures": {
+        "1": {
+          "name": "string.error_red"
+        }
+      }
+    },
+    {
+      "name": "Total Success Fail",
+      "match": "(Total:.*), (Success:.*), (Fail:.*)",
+      "captures": {
+        "1": {
+          "name": "string.cyan"
+        },
+        "2": {
+          "name": "string.green"
+        },
+        "3": {
+          "name": "string.error_red"
+        }
+      }
+    },
+    {
+      "name": "[info]",
+      "match": "(\\[INFO\\]).*",
+      "captures": {
+        "1": {
+          "name": "string.green"
+        }
+      }
+    },
+    {
+      "name": "[warn]",
+      "match": "(\\[WARN\\]).*",
+      "captures": {
+        "1": {
+          "name": "string.extra_yellow"
+        }
+      }
+    },
+    {
+      "name": "[error]",
+      "match": "(\\[ERROR\\]).*",
+      "captures": {
+        "1": {
+          "name": "string.error_red"
+        }
+      }
+    }
+  ],
+  "repository": {},
+  "fileTypes": ["log"],
+  "name": "Diagnose Log",
+  "scopeName": "link.diagnose"
+}
+
