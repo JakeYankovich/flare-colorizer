@@ -26,7 +26,7 @@
     },
     {
       "name": "evilheader1",
-      "match": "Config\\sErrors|Loading\\sErrors|(\\[ERROR\\])|\\sError|ERROR|Error:",
+      "match": "Config\\sErrors|Loading\\sErrors|(\\[ERROR\\])|\\sError\\s|ERROR|Error:",
       "captures": {
         "0": {
           "name": "string.evilheader1"

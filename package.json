@@ -20,14 +20,20 @@
         "title": "colorize"
       }
     ],
-    "languages": [{
+    "languages": [
+    {
       "id": "status language",
       "extensions": ["status.log"]
     },
     {
       "id": "secrets language",
       "extensions": ["secrets.log"]
-    }],
+    },
+    {
+      "id": "configcheck language",
+      "extensions": ["config-check.log"]
+    }
+  ],
     "grammars": [
     {
       "language": "status language",
@@ -38,6 +44,11 @@
       "language": "secrets language",
       "scopeName": "link.secrets",
       "path": "./syntaxes/secrets.tmLanguage.json"
+    },
+    {
+      "language": "configcheck language",
+      "scopeName": "link.configcheck",
+      "path": "./syntaxes/configcheck.tmLanguage.json"
     }
   ],
   "themes": [
