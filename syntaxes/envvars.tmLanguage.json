@@ -25,17 +25,11 @@
       "name": "nonDD var",
       "match": "(-)  (?!DD_)(.*)=(.*)",
       "captures": {
-        "0": {
-          "name": "string.future_pink"
-        },
         "1": {
           "name": "string.future_pink"
         },
         "2": {
-          "name": "string.navyblue"
-        },
-        "3": {
-          "name": "string.green"
+          "name": "string.cyan"
         }
       }
     }

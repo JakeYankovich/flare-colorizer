@@ -113,7 +113,13 @@
       {
         "scope": "string.datadog_purple",
         "settings": {
-          "foreground": "#FFa0FF"
+          "foreground": "#DDc0ff"
+        }
+      },
+      {
+        "scope": "string.crazy_purple",
+        "settings": {
+          "foreground": "#ff00ff"
         }
       }
     ]
