@@ -27,7 +27,7 @@
     },
     {
       "id": "logs language",
-      "extensions": ["agent.log", "process-agent.log", "system-probe.log", "trace-agent.log"]
+      "extensions": ["agent.log", "process-agent.log", "system-probe.log", "trace-agent.log", "cluster-agent.log"]
     },
     {
       "id": "secrets language",

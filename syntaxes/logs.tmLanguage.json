@@ -2,7 +2,7 @@
     "patterns": [
       {
         "name": "Sysprobe test Level Log Line",
-        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (TRACE) \\|",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (TRACE) \\|",
         "captures": {
           "1": {
             "name": "string.os_orange"
@@ -14,7 +14,7 @@
       },
       {
         "name": "Sysprobe test Level Log Line",
-        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (DEBUG) \\|",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (DEBUG) \\|",
         "captures": {
           "1": {
             "name": "string.os_orange"
@@ -26,7 +26,7 @@
       },
       {
         "name": "Sysprobe test Level Log Line",
-        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (INFO) \\|",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (INFO) \\|",
         "captures": {
           "1": {
             "name": "string.os_orange"
@@ -38,7 +38,7 @@
       },
       {
         "name": "Sysprobe test Level Log Line",
-        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (WARN) \\|",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (WARN) \\|",
         "captures": {
           "1": {
             "name": "string.os_orange"
@@ -50,7 +50,19 @@
       },
       {
         "name": "Sysprobe test Level Log Line",
-        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (ERROR) \\|",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (ERROR) \\|",
+        "captures": {
+          "1": {
+            "name": "string.os_orange"
+          },
+          "2": {
+            "name": "string.error_red"
+          }
+        }
+      },
+      {
+        "name": "Sysprobe test Level Log Line",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (CRITICAL) \\|",
         "captures": {
           "1": {
             "name": "string.os_orange"
