@@ -39,6 +39,9 @@
       "captures": {
         "2": {
           "name": "string.evilheader1"
+        },
+        "1": {
+          "name": "string.evilheader1"
         }
       }
     },
