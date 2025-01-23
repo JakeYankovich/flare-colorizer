@@ -1,37 +1,25 @@
 {
     "patterns": [
       {
-        "name": "INFO Level Log Line",
-        "match": "INFO",
+        "name": "Sysprobe test Level Log Line",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (TRACE) \\|",
         "captures": {
-          "0": {
-            "name": "string.navyblue"
-          }
-        }
-      },
-      {
-        "name": "WARN Level Log Line",
-        "match": "WARN",
-        "captures": {
-          "0": {
+          "1": {
+            "name": "string.os_orange"
+          },
+          "2": {
             "name": "string.timestamp_yellow"
           }
         }
       },
       {
-        "name": "ERROR Level Log Line",
-        "match": "ERROR",
+        "name": "Sysprobe test Level Log Line",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (DEBUG) \\|",
         "captures": {
-          "0": {
-            "name": "string.error_red"
-          }
-        }
-      },
-      {
-        "name": "DEBUG Level Log Line",
-        "match": "DEBUG",
-        "captures": {
-          "0": {
+          "1": {
+            "name": "string.os_orange"
+          },
+          "2": {
             "name": "string.datadog_purple"
           }
         }
@@ -44,7 +32,31 @@
             "name": "string.os_orange"
           },
           "2": {
-            "name": "string.navyblue"
+            "name": "string.cyan"
+          }
+        }
+      },
+      {
+        "name": "Sysprobe test Level Log Line",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (WARN) \\|",
+        "captures": {
+          "1": {
+            "name": "string.os_orange"
+          },
+          "2": {
+            "name": "string.extra_yellow"
+          }
+        }
+      },
+      {
+        "name": "Sysprobe test Level Log Line",
+        "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE) \\| (ERROR) \\|",
+        "captures": {
+          "1": {
+            "name": "string.os_orange"
+          },
+          "2": {
+            "name": "string.error_red"
           }
         }
       }
