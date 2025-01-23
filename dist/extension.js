@@ -14137,29 +14137,35 @@ function activate(context) {
             const currentDate = /* @__PURE__ */ new Date();
             const diffTime = Math.abs(currentDate.getTime() - releaseDate.getTime());
             const diffMonths = diffTime / (1e3 * 60 * 60 * 24 * 30);
-            let scopeName = "string.blue";
+            let scopeName = "string.version_placeholder";
             if (diffMonths <= 2) {
-              scopeName = "string.green";
+              scopeName = "string.version_green";
             } else if (diffMonths <= 6) {
               scopeName = "string.version_yellow";
             } else {
-              scopeName = "string.error_red";
+              scopeName = "string.version_red";
             }
             console.log(`Scope for version ${agentVersion}:`, scopeName);
             const possibleScopes = [
-              "string.placeholder_version",
-              "string.error_red",
-              "string.blue",
+              "string.version_placeholder",
+              "string.version_red",
               "string.version_yellow",
-              "string.green"
+              "string.version_green"
             ];
             const grammarFilePath = path.join(__dirname, "..", "syntaxes", "status.tmLanguage.json");
             let grammarContent = fs.readFileSync(grammarFilePath, "utf-8");
-            possibleScopes.forEach((scope) => {
-              const regex = new RegExp(`"${scope}"`, "g");
-              grammarContent = grammarContent.replace(regex, `"${scopeName}"`);
+            let grammarJson = JSON.parse(grammarContent);
+            grammarJson.patterns.forEach((pattern) => {
+              if (pattern.captures) {
+                Object.keys(pattern.captures).forEach((captureGroup) => {
+                  const capture = pattern.captures[captureGroup];
+                  if (possibleScopes.includes(capture.name)) {
+                    capture.name = scopeName;
+                  }
+                });
+              }
             });
-            console.log("Updated grammar content:", grammarContent);
+            grammarContent = JSON.stringify(grammarJson, null, 2);
             fs.writeFileSync(grammarFilePath, grammarContent, "utf-8");
             vscode.commands.executeCommand("workbench.action.reloadWindow");
           } catch (error) {

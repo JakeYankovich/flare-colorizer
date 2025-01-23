@@ -63,9 +63,21 @@
         }
       },
       {
+        "scope": "string.version_red",
+        "settings": {
+          "foreground": "#ff0000"
+        }
+      },
+      {
         "scope": "string.version_yellow",
         "settings": {
           "foreground": "#ffff00"
+        }
+      },
+      {
+        "scope": "string.version_green",
+        "settings": {
+          "foreground": "#77ffbb"
         }
       },
       {

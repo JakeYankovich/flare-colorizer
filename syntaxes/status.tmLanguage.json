@@ -8,10 +8,10 @@
           "name": "string.future_pink"
         },
         "1": {
-          "name": "string.version_yellow"
+          "name": "string.future_pink"
         },
         "2": {
-          "name": "string.green"
+          "name": "string.version_red"
         }
       }
     },
@@ -19,7 +19,7 @@
       "name": "header1",
       "match": "^Transport\\sProxy\\sWarnings|Autodiscovery|^Datadog\\sCluster\\sAgent|Collector$|JMXFetch$|JMX\\sFetch$|Forwarder|^Endpoints|APM\\sAgent|Logs\\sAgent$|Aggregator|Process\\sAgent|DogStatsD|OTLP|Remote\\sConfiguration$|System\\sProbe",
       "captures": {
-        "0":{
+        "0": {
           "name": "string.header1"
         }
       }
@@ -28,7 +28,7 @@
       "name": "evilheader1",
       "match": "Config\\sErrors|Loading\\sErrors|(\\[ERROR\\])|\\sError|ERROR|Error:",
       "captures": {
-        "0":{
+        "0": {
           "name": "string.evilheader1"
         }
       }
@@ -37,7 +37,7 @@
       "name": "num errors:",
       "match": "^.*Errors:\\s([1-9]{1,5})",
       "captures": {
-        "0":{
+        "0": {
           "name": "string.evilheader1"
         }
       }
@@ -46,7 +46,7 @@
       "name": "header2",
       "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers|Process\\sComponent$|Extractors$",
       "captures": {
-        "0":{
+        "0": {
           "name": "string.header2"
         }
       }
@@ -64,7 +64,7 @@
       "name": "hyphendivers",
       "match": "--+",
       "captures": {
-        "0":{
+        "0": {
           "name": "string.green"
         }
       }
@@ -73,7 +73,7 @@
       "name": "equalsdividers",
       "match": "(==+)",
       "captures": {
-        "0":{
+        "0": {
           "name": "string.future_pink"
         }
       }
@@ -116,8 +116,9 @@
     }
   ],
   "repository": {},
-  "fileTypes": ["log"],
+  "fileTypes": [
+    "log"
+  ],
   "name": "Status Log",
   "scopeName": "link.status"
 }
-
