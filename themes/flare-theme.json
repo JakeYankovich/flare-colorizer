@@ -16,6 +16,12 @@
         }
       },
       {
+        "scope": "link.envvars",
+        "settings": {
+          "foreground": "#dddddd"
+        }
+      },
+      {
         "scope": "string.error_red",
         "settings": {
           "foreground": "#ff0000"
@@ -107,7 +113,7 @@
       {
         "scope": "string.datadog_purple",
         "settings": {
-          "foreground": "#950B8F"
+          "foreground": "#FFa0FF"
         }
       }
     ]

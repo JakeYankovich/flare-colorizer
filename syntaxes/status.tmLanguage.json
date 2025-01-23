@@ -11,7 +11,7 @@
           "name": "string.extra_yellow"
         },
         "2": {
-          "name": "string.version_green"
+          "name": "string.version_red"
         }
       }
     },
@@ -37,10 +37,10 @@
       "name": "num errors:",
       "match": "^.*(Errors:)\\s([1-9]{1,5})",
       "captures": {
-        "2": {
+        "1": {
           "name": "string.evilheader1"
         },
-        "1": {
+        "2": {
           "name": "string.evilheader1"
         }
       }
