@@ -1,7 +1,7 @@
 {
     "patterns": [
       {
-        "name": "Sysprobe test Level Log Line",
+        "name": "TRACE Level Log Line",
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (TRACE) \\|",
         "captures": {
           "1": {
@@ -13,7 +13,7 @@
         }
       },
       {
-        "name": "Sysprobe test Level Log Line",
+        "name": "DEBUG Level Log Line",
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (DEBUG) \\|",
         "captures": {
           "1": {
@@ -25,7 +25,7 @@
         }
       },
       {
-        "name": "Sysprobe test Level Log Line",
+        "name": "INFO Level Log Line",
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (INFO) \\|",
         "captures": {
           "1": {
@@ -37,7 +37,7 @@
         }
       },
       {
-        "name": "Sysprobe test Level Log Line",
+        "name": "WARN Level Log Line",
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (WARN) \\|",
         "captures": {
           "1": {
@@ -49,7 +49,7 @@
         }
       },
       {
-        "name": "Sysprobe test Level Log Line",
+        "name": "ERROR Level Log Line",
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (ERROR) \\|",
         "captures": {
           "1": {
@@ -61,7 +61,7 @@
         }
       },
       {
-        "name": "Sysprobe test Level Log Line",
+        "name": "CRTIICAL Level Log Line",
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (CRITICAL) \\|",
         "captures": {
           "1": {
@@ -69,6 +69,27 @@
           },
           "2": {
             "name": "string.error_red"
+          }
+        }
+      },
+      {
+        "name": "Any Bad Keywords in Logs",
+        "match": "\\b(errors|error|invalid|exiting|exit)\\b",
+        "captures": {
+          "0": {
+            "name": "string.error_red"
+          }
+        }
+      },
+            {
+        "name": "Any Bad Keywords in Logs",
+        "match": "(\\d{4}-\\d{2}-\\d{2}) (\\d{2}:\\d{2}:\\d{2} UTC)",
+        "captures": {
+          "0": {
+            "name": "string.error_red"
+          },
+          "1": {
+            "name": "string.os_orange"
           }
         }
       }
