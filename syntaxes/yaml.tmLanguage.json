@@ -11,7 +11,7 @@
     },
     {
       "name": "key:",
-      "match": "^(?!instances:|init_config:|logs:)([^-:]+):$",
+      "match": "^(?!instances:|init_config:|logs:|ad_identifiers:)([^-:]+):$",
       "captures": {
         "1": {
           "name": "string.datadog_purple"
@@ -55,8 +55,17 @@
       }
     },
     {
+      "name": "- looseItem",
+      "match": "(-) [^:]",
+      "captures": {
+        "1": {
+          "name": "string.extra_yellow"
+        }
+      }
+    },
+    {
       "name": "instances, init_config, logs",
-      "match": "^(instances:|init_config:|logs:)\\s.*",
+      "match": "^(instances:|init_config:|logs:|ad_identifiers:)\\s.*",
       "captures": {
         "0": {
           "name": "string.lame_grey"

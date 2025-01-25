@@ -31,7 +31,7 @@
     },
     {
       "id": "yaml language",
-      "extensions": [".yaml"]
+      "extensions": [".yaml", ".yaml.default"]
     },
     {
       "id": "secrets language",
