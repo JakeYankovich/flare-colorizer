@@ -30,6 +30,10 @@
       "extensions": ["agent.log", "process-agent.log", "system-probe.log", "trace-agent.log", "cluster-agent.log"]
     },
     {
+      "id": "yaml language",
+      "extensions": [".yaml"]
+    },
+    {
       "id": "secrets language",
       "extensions": ["secrets.log"]
     },
@@ -56,6 +60,11 @@
       "language": "logs language",
       "scopeName": "link.log",
       "path": "./syntaxes/logs.tmLanguage.json"
+    },
+    {
+      "language": "yaml language",
+      "scopeName": "link.yaml",
+      "path": "./syntaxes/yaml.tmLanguage.json"
     },
     {
       "language": "secrets language",

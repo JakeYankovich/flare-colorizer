@@ -10,6 +10,12 @@
         }
       },
       {
+        "scope": "link.yaml",
+        "settings": {
+          "foreground": "#dddddd"
+        }
+      },
+      {
         "scope": "link.secrets",
         "settings": {
           "foreground": "#00ff00"
@@ -126,6 +132,12 @@
         "scope": "string.crazy_purple",
         "settings": {
           "foreground": "#ff00ff"
+        }
+      },
+      {
+        "scope": "string.lame_grey",
+        "settings": {
+          "foreground": "#999999"
         }
       }
     ]
