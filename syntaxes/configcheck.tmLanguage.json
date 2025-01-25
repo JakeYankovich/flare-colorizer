@@ -2,7 +2,7 @@
   "patterns": [
     {
       "name": "equalsdividers",
-      "match": "(===+)",
+      "match": "(^===$)",
       "captures": {
         "0": {
           "name": "string.future_pink"
@@ -10,11 +10,29 @@
       }
     },
     {
-      "name": "each check",
-      "match": ".*\\s(check)",
+      "name": "each check header",
+      "match": "(===)\\s(.*)\\s(check)\\s(===)",
       "captures": {
         "0": {
+          "name": "string.future_pink"
+        },
+        "2": {
           "name": "string.header2"
+        },
+        "3": {
+          "name": "string.extra_yellow"
+        }
+      }
+    },
+    {
+      "name": "config errors header",
+      "match": "(===)\\s(Configuration errors)\\s(===)",
+      "captures": {
+        "0": {
+          "name": "string.os_orange"
+        },
+        "2": {
+          "name": "string.evilheader1"
         }
       }
     },

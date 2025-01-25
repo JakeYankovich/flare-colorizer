@@ -28,6 +28,12 @@
         }
       },
       {
+        "scope": "string.version_color",
+        "settings": {
+          "foreground": "#ff4444"
+        }
+      },
+      {
         "scope": "string.green",
         "settings": {
           "foreground": "#77ffbb"
@@ -83,7 +89,7 @@
       {
         "scope": "string.extra_yellow",
         "settings": {
-          "foreground": "#ffff00"
+          "foreground": "#ffdd00"
         }
       },
       {

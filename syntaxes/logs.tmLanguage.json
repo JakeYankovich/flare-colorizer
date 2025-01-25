@@ -5,7 +5,7 @@
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (TRACE) \\|",
         "captures": {
           "1": {
-            "name": "string.os_orange"
+            "name": "string.future_pink"
           },
           "2": {
             "name": "string.timestamp_yellow"
@@ -17,7 +17,7 @@
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (DEBUG) \\|",
         "captures": {
           "1": {
-            "name": "string.os_orange"
+            "name": "string.future_pink"
           },
           "2": {
             "name": "string.datadog_purple"
@@ -29,7 +29,7 @@
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (INFO) \\|",
         "captures": {
           "1": {
-            "name": "string.os_orange"
+            "name": "string.future_pink"
           },
           "2": {
             "name": "string.cyan"
@@ -41,7 +41,7 @@
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (WARN) \\|",
         "captures": {
           "1": {
-            "name": "string.os_orange"
+            "name": "string.future_pink"
           },
           "2": {
             "name": "string.extra_yellow"
@@ -53,7 +53,7 @@
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (ERROR) \\|",
         "captures": {
           "1": {
-            "name": "string.os_orange"
+            "name": "string.future_pink"
           },
           "2": {
             "name": "string.error_red"
@@ -65,7 +65,7 @@
         "match": "\\| (SYS-PROBE|CORE|PROCESS|TRACE|CLUSTER) \\| (CRITICAL) \\|",
         "captures": {
           "1": {
-            "name": "string.os_orange"
+            "name": "string.future_pink"
           },
           "2": {
             "name": "string.error_red"
@@ -83,13 +83,13 @@
       },
             {
         "name": "Date and Timestamp",
-        "match": "(\\d{4}-\\d{2}-\\d{2}) (\\d{2}:\\d{2}:\\d{2} UTC)",
+        "match": "(\\d{4}-\\d{2}-\\d{2}) (\\d{2}:\\d{2}:\\d{2} [A-Z]{3})",
         "captures": {
-          "0": {
-            "name": "string.error_red"
-          },
           "1": {
-            "name": "string.os_orange"
+            "name": "string.timestamp_yellow"
+          },
+          "2": {
+            "name": "string.timestamp_yellow"
           }
         }
       }
