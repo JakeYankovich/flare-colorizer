@@ -13,10 +13,15 @@ export function activate(context: vscode.ExtensionContext) {
         const workspaceFolder = vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders[0].uri.fsPath : undefined;
 
         if (workspaceFolder) {
-            const logFilePath = path.join(workspaceFolder, 'status.log');
+            const logFilePaths = [
+                path.join(workspaceFolder, 'status.log'),
+                path.join(workspaceFolder, 'cluster-agent-status.log')
+            ];
 
-            // Check if the file exists
-            if (fs.existsSync(logFilePath)) {
+            // Check if any of the files exist
+            const logFilePath = logFilePaths.find(fs.existsSync);
+
+            if (logFilePath) {
                 // Read the file content
                 const logContent = fs.readFileSync(logFilePath, 'utf-8');
 
@@ -37,46 +42,30 @@ export function activate(context: vscode.ExtensionContext) {
                         const diffTime = Math.abs(currentDate.getTime() - releaseDate.getTime());
                         const diffMonths = diffTime / (1000 * 60 * 60 * 24 * 30);
 
-                        let scopeName = 'string.version_placeholder';
+                        let color = '#ff4444'; // Default to red
                         if (diffMonths <= 2) {
-                            scopeName = 'string.version_green';
+                            color = '#77ffbb'; // Green
                         } else if (diffMonths <= 6) {
-                            scopeName = 'string.version_yellow';
-                        } else {
-                            scopeName = 'string.version_red';
+                            color = '#ffff00'; // Yellow
                         }
 
-                        console.log(`Scope for version ${agentVersion}:`, scopeName);
-                        // Define the array of possible scopes
+                        console.log(`Color for version ${agentVersion}:`, color);
 
-                        const possibleScopes = [
-                            'string.version_placeholder',
-                            'string.version_red',
-                            'string.version_yellow',
-                            'string.version_green'
-                        ];
+                        // Update the flare-theme.json file with the correct color
+                        const themeFilePath = path.join(__dirname, '..', 'themes', 'flare-theme.json');
+                        let themeContent = fs.readFileSync(themeFilePath, 'utf-8');
+                        let themeJson = JSON.parse(themeContent);
 
-                        // Update the TextMate grammar file with the correct scope for capture group 2
-                        const grammarFilePath = path.join(__dirname, '..', 'syntaxes', 'status.tmLanguage.json');
-                        let grammarContent = fs.readFileSync(grammarFilePath, 'utf-8');
-                        let grammarJson = JSON.parse(grammarContent);
-
-                        // Iterate through all patterns and captures
-                        grammarJson.patterns.forEach((pattern: any) => {
-                            if (pattern.captures) {
-                                Object.keys(pattern.captures).forEach((captureGroup) => {
-                                    const capture = pattern.captures[captureGroup];
-                                    if (possibleScopes.includes(capture.name)) {
-                                        capture.name = scopeName;
-                                    }
-                                });
+                        // Update the color for the version scope
+                        themeJson.tokenColors.forEach((token: any) => {
+                            if (token.scope === 'string.version_color') {
+                                token.settings.foreground = color;
                             }
                         });
 
                         // Convert JSON back to string
-                        grammarContent = JSON.stringify(grammarJson, null, 2);
-                        // console.log('Updated grammar content:', grammarContent); // Log the updated content
-                        fs.writeFileSync(grammarFilePath, grammarContent, 'utf-8');
+                        themeContent = JSON.stringify(themeJson, null, 2);
+                        fs.writeFileSync(themeFilePath, themeContent, 'utf-8');
 
                         // Reload the window to apply the changes
                         vscode.commands.executeCommand('workbench.action.reloadWindow');
@@ -84,10 +73,10 @@ export function activate(context: vscode.ExtensionContext) {
                         console.error('Error fetching release date from GitHub:', error);
                     }
                 } else {
-                    console.log('Agent version not found in status.log');
+                    console.log('Agent version not found in log file');
                 }
             } else {
-                console.log('status.log file does not exist');
+                console.log('No log file (status.log or cluster-agent-status.log) found');
             }
         } else {
             console.log('No workspace folder is open');

@@ -2,7 +2,7 @@
   "patterns": [
     {
       "name": "agentversion",
-      "match": "(Agent|Datadog Cluster Agent) \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
+      "match": "(Agent|Cluster Agent) \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
       "captures": {
         "0": {
           "name": "string.future_pink"
@@ -11,7 +11,7 @@
           "name": "string.extra_yellow"
         },
         "2": {
-          "name": "string.version_green"
+          "name": "string.version_color"
         }
       }
     },

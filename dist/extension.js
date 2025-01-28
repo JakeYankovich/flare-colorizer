@@ -14123,8 +14123,12 @@ function activate(context) {
     vscode.window.showInformationMessage("Flare-colorizer has been loaded! DATADOGS UNITE!!!");
     const workspaceFolder = vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders[0].uri.fsPath : void 0;
     if (workspaceFolder) {
-      const logFilePath = path.join(workspaceFolder, "status.log");
-      if (fs.existsSync(logFilePath)) {
+      const logFilePaths = [
+        path.join(workspaceFolder, "status.log"),
+        path.join(workspaceFolder, "cluster-agent-status.log")
+      ];
+      const logFilePath = logFilePaths.find(fs.existsSync);
+      if (logFilePath) {
         const logContent = fs.readFileSync(logFilePath, "utf-8");
         const versionMatch = logContent.match(/Agent \(v(\d+\.\d+\.\d+)\)/);
         if (versionMatch) {
@@ -14137,45 +14141,32 @@ function activate(context) {
             const currentDate = /* @__PURE__ */ new Date();
             const diffTime = Math.abs(currentDate.getTime() - releaseDate.getTime());
             const diffMonths = diffTime / (1e3 * 60 * 60 * 24 * 30);
-            let scopeName = "string.version_placeholder";
+            let color = "#ff4444";
             if (diffMonths <= 2) {
-              scopeName = "string.version_green";
+              color = "#77ffbb";
             } else if (diffMonths <= 6) {
-              scopeName = "string.version_yellow";
-            } else {
-              scopeName = "string.version_red";
+              color = "#ffff00";
             }
-            console.log(`Scope for version ${agentVersion}:`, scopeName);
-            const possibleScopes = [
-              "string.version_placeholder",
-              "string.version_red",
-              "string.version_yellow",
-              "string.version_green"
-            ];
-            const grammarFilePath = path.join(__dirname, "..", "syntaxes", "status.tmLanguage.json");
-            let grammarContent = fs.readFileSync(grammarFilePath, "utf-8");
-            let grammarJson = JSON.parse(grammarContent);
-            grammarJson.patterns.forEach((pattern) => {
-              if (pattern.captures) {
-                Object.keys(pattern.captures).forEach((captureGroup) => {
-                  const capture = pattern.captures[captureGroup];
-                  if (possibleScopes.includes(capture.name)) {
-                    capture.name = scopeName;
-                  }
-                });
+            console.log(`Color for version ${agentVersion}:`, color);
+            const themeFilePath = path.join(__dirname, "..", "themes", "flare-theme.json");
+            let themeContent = fs.readFileSync(themeFilePath, "utf-8");
+            let themeJson = JSON.parse(themeContent);
+            themeJson.tokenColors.forEach((token) => {
+              if (token.scope === "string.version_color") {
+                token.settings.foreground = color;
               }
             });
-            grammarContent = JSON.stringify(grammarJson, null, 2);
-            fs.writeFileSync(grammarFilePath, grammarContent, "utf-8");
+            themeContent = JSON.stringify(themeJson, null, 2);
+            fs.writeFileSync(themeFilePath, themeContent, "utf-8");
             vscode.commands.executeCommand("workbench.action.reloadWindow");
           } catch (error) {
             console.error("Error fetching release date from GitHub:", error);
           }
         } else {
-          console.log("Agent version not found in status.log");
+          console.log("Agent version not found in log file");
         }
       } else {
-        console.log("status.log file does not exist");
+        console.log("No log file (status.log or cluster-agent-status.log) found");
       }
     } else {
       console.log("No workspace folder is open");
