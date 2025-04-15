@@ -7,8 +7,6 @@
       "scope": [
         "support.type.property-name.json",
         "string.json",
-        "meta.structure.dictionary.json",
-        "meta.structure.dictionary.value.json",
         "source.json"
       ],
       "settings": {
@@ -16,9 +14,21 @@
       }
     },
     {
+      "scope": "meta.structure.dictionary.json",
+      "settings": {
+        "foreground": "#ffaa77" // color from "os_orange"
+      }
+    },
+    {
+      "scope": "meta.structure.dictionary.value.json",
+      "settings": {
+        "foreground": "#fcfae6" // color from "off_white"
+      }
+    },
+    {
       "scope": "constant.numeric.json",
       "settings": {
-        "foreground": "#B5CEA8" // Example color for numbers
+        "foreground": "#ffffcc" // color from "timestamp_yellow"
       }
     },
     {
