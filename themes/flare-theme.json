@@ -4,6 +4,24 @@
   "colors": {},
   "tokenColors": [
     {
+      "scope": [
+        "support.type.property-name.json",
+        "string.json",
+        "meta.structure.dictionary.json",
+        "meta.structure.dictionary.value.json",
+        "source.json"
+      ],
+      "settings": {
+        "foreground": "#CE9178" // Example color for JSON keys and strings
+      }
+    },
+    {
+      "scope": "constant.numeric.json",
+      "settings": {
+        "foreground": "#B5CEA8" // Example color for numbers
+      }
+    },
+    {
       "scope": "link.status",
       "settings": {
         "foreground": "#dddddd"
