@@ -52,6 +52,12 @@
       }
     },
     {
+      "scope": "string.softer_cyan",
+      "settings": {
+        "foreground": "#d6ecff"
+      }
+    },
+    {
       "scope": "string.header1",
       "settings": {
         "foreground": "#ffdd00",
@@ -120,6 +126,12 @@
       "scope": "string.lame_grey",
       "settings": {
         "foreground": "#999999"
+      }
+    },
+    {
+      "scope": "string.off_white",
+      "settings": {
+        "foreground": "#fcfae6"
       }
     }
   ]

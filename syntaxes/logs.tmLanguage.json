@@ -81,7 +81,7 @@
           }
         }
       },
-            {
+      {
         "name": "Date and Timestamp",
         "match": "(\\d{4}-\\d{2}-\\d{2}) (\\d{2}:\\d{2}:\\d{2} [A-Z]{3})",
         "captures": {
@@ -90,6 +90,21 @@
           },
           "2": {
             "name": "string.timestamp_yellow"
+          }
+        }
+      },
+      {
+        "name": "New Awesome Rule",
+        "match": "(\\(.*\\))(.*\\|\\s)(.*)",
+        "captures": {
+          "1": {
+            "name": "string.softer_cyan"
+          },
+          "2": {
+            "name": "string.future_pink"
+          },
+          "3": {
+            "name": "string.off_white"
           }
         }
       }
