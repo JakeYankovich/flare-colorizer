@@ -7,3 +7,6 @@ Initial release of Flare Colorizer
 
 ### 1.0.1
 Add new regex rules to colorize json files
+
+### 1.0.2
+Improve json file colorization
