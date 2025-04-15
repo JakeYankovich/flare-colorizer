@@ -179,6 +179,12 @@
       "settings": {
         "foreground": "#fcfae6"
       }
+    },
+    {
+      "scope": "string.rust",
+      "settings": {
+        "foreground": "#D08168"
+      }
     }
   ]
 }

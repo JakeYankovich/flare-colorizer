@@ -2,26 +2,35 @@
   "patterns": [
     {
       "name": "key: value",
-      "match": "^(?!init_config:)([^-]+): (.*)$",
+      "match": "^(?!init_config:)(.*): (.*)$",
       "captures": {
+        "0": {
+          "name": "string.off_white"
+        },
         "1": {
-          "name": "string.cyan"
+          "name": "string.rust"
         }
       }
     },
     {
       "name": "key:",
-      "match": "^(?!instances:|init_config:|logs:|ad_identifiers:)([^-:]+):$",
+      "match": "^(?!instances:|init_config:|logs:|ad_identifiers:)(.*):$",
       "captures": {
+        "0": {
+          "name": "string.off_white"
+        },
         "1": {
-          "name": "string.datadog_purple"
+          "name": "string.os_orange"
         }
       }
     },
     {
       "name": "- key: value",
-      "match": "(-)(.*):\\s.+",
+      "match": "^(-)(.*):\\s.+",
       "captures": {
+        "0": {
+          "name": "string.off_white"
+        },
         "1": {
           "name": "string.extra_yellow"
         },
@@ -32,8 +41,11 @@
     },
     {
       "name": "- key:",
-      "match": "(-)\\s(.*):$",
+      "match": "^(-)\\s(.*):$",
       "captures": {
+        "0": {
+          "name": "string.off_white"
+        },
         "1": {
           "name": "string.extra_yellow"
         },
@@ -44,8 +56,11 @@
     },
     {
       "name": "- tag:value",
-      "match": "(-)(.*):(.+)",
+      "match": "^(-)(.*):(.+)",
       "captures": {
+        "0": {
+          "name": "string.off_white"
+        },
         "1": {
           "name": "string.extra_yellow"
         },

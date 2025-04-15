@@ -13,3 +13,6 @@ Improve json file colorization
 
 ### 1.0.3
 Added high quality icon/logo
+
+### 1.0.4
+Expand yaml coloring to better accomodate for k8s agent yaml files
