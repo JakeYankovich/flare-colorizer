@@ -2,7 +2,7 @@
   "patterns": [
     {
       "name": "agentversion",
-      "match": "(Agent|Cluster Agent) \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
+      "match": "(Agent|Datadog Cluster Agent|Cluster Agent) \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
       "captures": {
         "0": {
           "name": "string.future_pink"
@@ -17,7 +17,7 @@
     },
     {
       "name": "header1",
-      "match": "^Transport\\sProxy\\sWarnings|Autodiscovery|^Datadog\\sCluster\\sAgent|Collector$|JMXFetch$|JMX\\sFetch$|Forwarder|^Endpoints|APM\\sAgent|Logs\\sAgent$|Aggregator|Process\\sAgent|DogStatsD|OTLP|Remote\\sConfiguration$|System\\sProbe",
+      "match": "^Transport\\sProxy\\sWarnings|Autodiscovery|^Datadog\\sCluster\\sAgent|Collector$|JMXFetch$|JMX\\sFetch$|Forwarder|^Endpoints|APM\\sAgent|Logs\\sAgent$|Aggregator|Process\\sAgent|DogStatsD|OTLP|Remote\\sConfiguration$|System\\sProbe|Leader\\sElection|Orchestrator\\sExplorer|Cluster\\sChecks\\sDispatching|Custom\\sMetrics\\sServer|External\\sMetrics\\sEndpoints",
       "captures": {
         "0": {
           "name": "string.header1"
@@ -47,7 +47,7 @@
     },
     {
       "name": "header2",
-      "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers|Process\\sComponent$|Extractors$",
+      "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers|Process\\sComponent$|Extractors$|Admission\\sController|Cache\\sStats|Orchestrator\\sEndpoints|Manifest\\sBuffer\\sStats|Manifests\\sFlushed\\sPer\\sResource",
       "captures": {
         "0": {
           "name": "string.header2"
@@ -92,7 +92,7 @@
     },
     {
       "name": "linux",
-      "match": "linux|Linux|ubuntu|debian|rhel",
+      "match": "linux|Linux|ubuntu|debian|rhel|redhat|darwin",
       "captures": {
         "0": {
           "name": "string.os_orange"
@@ -122,7 +122,7 @@
     },
     {
       "name": "timestamp",
-      "match": "[0-9]{11,13}",
+      "match": "\\b[0-9]{11,13}\\b",
       "captures": {
         "0": {
           "name": "string.timestamp_yellow"
