@@ -3,6 +3,7 @@
   "publisher": "jakeyankovich",
   "displayName": "flare-colorizer",
   "description": "Colorizes Datadog agent flares",
+  "icon": "icon.png",
   "version": "1.0.2",
   "engines": {
     "vscode": "^1.96.0"

@@ -10,3 +10,6 @@ Add new regex rules to colorize json files
 
 ### 1.0.2
 Improve json file colorization
+
+### 1.0.3
+Added high quality icon/logo

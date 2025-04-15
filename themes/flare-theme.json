@@ -10,7 +10,7 @@
         "source.json"
       ],
       "settings": {
-        "foreground": "#CE9178" // Example color for JSON keys and strings
+        "foreground": "#CE9178"
       }
     },
     {
