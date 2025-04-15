@@ -65,7 +65,7 @@
     },
     {
       "name": "hyphendivers",
-      "match": "--+",
+      "match": "---+",
       "captures": {
         "0": {
           "name": "string.green"

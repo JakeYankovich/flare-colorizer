@@ -145,6 +145,12 @@
       "settings": {
         "foreground": "#fcfae6"
       }
+    },
+    {
+      "scope": "link.json",
+      "settings": {
+        "foreground": "#fcfae6"
+      }
     }
   ]
 }

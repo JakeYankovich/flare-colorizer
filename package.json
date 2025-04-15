@@ -1,8 +1,9 @@
 {
   "name": "flare-colorizer",
+  "publisher": "jakeyankovich",
   "displayName": "flare-colorizer",
   "description": "Colorizes Datadog agent flares",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -48,6 +49,10 @@
     {
       "id": "diagnose language",
       "extensions": ["diagnose.log"]
+    },
+    {
+      "id": "json language",
+      "extensions": [".json"]
     }
   ],
     "grammars": [
@@ -85,6 +90,11 @@
       "language": "diagnose language",
       "scopeName": "link.diagnose",
       "path": "./syntaxes/diagnose.tmLanguage.json"
+    },
+    {
+      "language": "json language",
+      "scopeName": "link.json",
+      "path": "./syntaxes/json.tmLanguage.json"
     }
   ],
   "themes": [
