@@ -74,10 +74,10 @@
       },
       {
         "name": "Any Bad Keywords in Logs",
-        "match": "\\b(Errors|errors|Errors|error|Stop|stop|Stopped|stopped|Stopping|stopping|Kill|kill|Killed|killed|refuse|Refuse|refused|Refused|Invalid|invalid|Exit|exit|Exiting|exiting|Unexpected|unexpected|Cannot|cannot|Can't|can't|Unexpected|unexpected|timeout|Timeout|Timed out|timed out|Unable|unable)\\b",
+        "match": "\\b(Errors|errors|Errors|error|Stop|stop|Stopped|stopped|Stopping|stopping|Kill|kill|Killed|killed|refuse|Refuse|refused|Refused|Invalid|invalid|Exit|exit|Exiting|exiting|Unexpected|unexpected|Cannot|could\\snot|cannot|Can't|can't|Unexpected|unexpected|timeout|Timeout|Timed out|timed out|Unable|unable)\\b",
         "captures": {
           "0": {
-            "name": "string.error_red"
+            "name": "string.gentle_error_red"
           }
         }
       },
@@ -95,16 +95,31 @@
       },
       {
         "name": "New Awesome Rule",
-        "match": "(\\(.*\\))(.*\\|\\s)(.*)",
+        "match": "(\\(.*\\))(.*\\|\\s)",
         "captures": {
           "1": {
             "name": "string.softer_cyan"
           },
           "2": {
             "name": "string.future_pink"
-          },
-          "3": {
-            "name": "string.off_white"
+          }
+        }
+      },
+      {
+        "name": "Starting Agent",
+        "match": "(Starting Datadog Agent.*)",
+        "captures": {
+          "1": {
+            "name": "string.header1"
+          }
+        }
+      },
+      {
+        "name": "Stopping agent (See ya)",
+        "match": "(See ya!)",
+        "captures": {
+          "1": {
+            "name": "string.error_red"
           }
         }
       }

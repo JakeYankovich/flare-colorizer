@@ -18,7 +18,7 @@
     {
       "scope": "link.secrets",
       "settings": {
-        "foreground": "#00ff00"
+        "foreground": "#dddddd"
       }
     },
     {
@@ -31,6 +31,12 @@
       "scope": "string.error_red",
       "settings": {
         "foreground": "#ff4444"
+      }
+    },
+    {
+      "scope": "string.gentle_error_red",
+      "settings": {
+        "foreground": "#d46367"
       }
     },
     {
@@ -130,6 +136,12 @@
     },
     {
       "scope": "string.off_white",
+      "settings": {
+        "foreground": "#fcfae6"
+      }
+    },
+    {
+      "scope": "link.log",
       "settings": {
         "foreground": "#fcfae6"
       }
