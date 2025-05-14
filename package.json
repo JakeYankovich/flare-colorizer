@@ -4,7 +4,7 @@
   "displayName": "flare-colorizer",
   "description": "Colorizes Datadog agent flares",
   "icon": "icon.png",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -20,80 +20,131 @@
       {
         "command": "flare-colorizer.colorize", 
         "title": "colorize"
+      },
+      {
+        "command": "flare-colorizer.decolorize",
+        "title": "decolorize"
       }
     ],
     "languages": [
-    {
-      "id": "status language",
-      "extensions": ["status.log"]
+      {
+        "id": "statuslog",
+        "aliases": ["log", "log"],
+        "extensions": ["status.log"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "agentlog",
+        "aliases": ["agentlog", "agentlog"],
+        "extensions": ["agent.log", "process-agent.log", "system-probe.log", "trace-agent.log", "cluster-agent.log"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "configchecklog",
+        "aliases": ["configchecklog", "configcheck"],
+        "extensions": ["config-check.log"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "diagnoselog",
+        "aliases": ["diagnoselog"],
+        "extensions": ["diagnose.log"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "envvarslog",
+        "aliases": ["envvarslog", "envvars"],
+        "extensions": ["envvars.log"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "secretslog",
+        "aliases": ["secretslog", "secrets"],
+        "extensions": ["secrets.log"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+      "id": "log",
+      "aliases": ["log", "log"],
+      "extensions": [".log"],
+      "configuration": "./language-configuration.json"
     },
     {
-      "id": "logs language",
-      "extensions": ["agent.log", "process-agent.log", "system-probe.log", "trace-agent.log", "cluster-agent.log"]
+      "id": "yaml",
+      "aliases": ["YAML", "yaml"],
+      "extensions": [".yaml", ".yml"],
+      "configuration": "./language-configuration.json"
     },
     {
-      "id": "yaml language",
-      "extensions": [".yaml", ".yaml.default"]
+      "id": "typescript",
+      "aliases": ["TypeScript", "typescript", "ts"],
+      "extensions": [".ts"],
+      "configuration": "./language-configuration.json"
     },
     {
-      "id": "secrets language",
-      "extensions": ["secrets.log"]
-    },
-    {
-      "id": "configcheck language",
-      "extensions": ["config-check.log"]
-    },
-    {
-      "id": "envvars language",
-      "extensions": ["envvars.log"]
-    },
-    {
-      "id": "diagnose language",
-      "extensions": ["diagnose.log"]
+      "id": "javascript",
+      "aliases": ["JavaScript", "javascript", "js"],
+      "extensions": [".js"],
+      "configuration": "./language-configuration.json"
     }
   ],
     "grammars": [
-    {
-      "language": "status language",
-      "scopeName": "link.status",
-      "path": "./syntaxes/status.tmLanguage.json"
-    },
-    {
-      "language": "logs language",
-      "scopeName": "link.log",
-      "path": "./syntaxes/logs.tmLanguage.json"
-    },
-    {
-      "language": "yaml language",
-      "scopeName": "link.yaml",
-      "path": "./syntaxes/yaml.tmLanguage.json"
-    },
-    {
-      "language": "secrets language",
-      "scopeName": "link.secrets",
-      "path": "./syntaxes/secrets.tmLanguage.json"
-    },
-    {
-      "language": "configcheck language",
-      "scopeName": "link.configcheck",
-      "path": "./syntaxes/configcheck.tmLanguage.json"
-    },
-    {
-      "language": "envvars language",
-      "scopeName": "link.envvars",
-      "path": "./syntaxes/envvars.tmLanguage.json"
-    },
-    {
-      "language": "diagnose language",
-      "scopeName": "link.diagnose",
-      "path": "./syntaxes/diagnose.tmLanguage.json"
-    }
+      {
+        "language": "log",
+        "scopeName": "source.log",
+        "path": "./syntaxes/log.tmLanguage.json"
+      },
+      {
+        "language": "agentlog",
+        "scopeName": "source.agentlog",
+        "path": "./syntaxes/agentlog.tmLanguage.json"
+      },
+      {
+        "language": "statuslog",
+        "scopeName": "source.statuslog",
+        "path": "./syntaxes/statuslog.tmLanguage.json"
+      },
+      {
+        "language": "configchecklog",
+        "scopeName": "source.configcheck",
+        "path": "./syntaxes/configcheck.tmLanguage.json"
+      },
+      {
+        "language": "diagnoselog",
+        "scopeName": "source.diagnoselog",
+        "path": "./syntaxes/diagnoselog.tmLanguage.json"
+      },
+      {
+        "language": "envvarslog",
+        "scopeName": "source.envvarslog",
+        "path": "./syntaxes/envvarslog.tmLanguage.json"
+      },
+      {
+        "language": "secretslog",
+        "scopeName": "source.secretslog",
+        "path": "./syntaxes/secretslog.tmLanguage.json"
+      },
+      {
+        "language": "yaml",
+        "scopeName": "source.yaml",
+        "path": "./syntaxes/yaml.tmLanguage.json"
+      },
+      {
+        "language": "typescript",
+        "scopeName": "source.ts",
+        "path": "./syntaxes/typescript.tmLanguage.json"
+      },
+      {
+        "language": "javascript",
+        "scopeName": "source.js",
+        "path": "./syntaxes/javascript.tmLanguage.json"
+      }
   ],
   "themes": [
     {
-      "label": "Flare Theme",
+      "label": "Main Theme",
       "uiTheme": "vs-dark",
-      "path": "./themes/flare-theme.json"
+      "path": "./themes/main-theme.json"
     }
   ]
   },
@@ -126,4 +177,5 @@
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1"
   }
+  
 }

@@ -1,0 +1,534 @@
+{
+    "name": "Main Theme",
+    "colors": {},
+    "tokenColors": [
+
+        /*####################################################*/
+        /*#########        LOGS SECTION        ###############*/
+        /*####################################################*/
+
+        //=#=#=#=#=***   STATUS LOG COLORS    ***=#=#=#=#=#=#
+        {
+            "scope": "source.statuslog", //scope for the overall status log file
+            "settings": {
+              "foreground": "#dddddd"
+            }
+        },
+        {
+            "scope": "string.error_red",
+            "settings": {
+              "foreground": "#ff4444"
+            }
+        },
+        {
+        "scope": "string.gentle_error_red",
+        "settings": {
+            "foreground": "#d46367"
+        }
+        },
+        {
+        "scope": "string.version_color",
+        "settings": {
+            "foreground": "#ffff00"
+        }
+        },
+        {
+        "scope": "string.green",
+        "settings": {
+            "foreground": "#77ffbb"
+        }
+        },
+        {
+        "scope": "string.cyan",
+        "settings": {
+            "foreground": "#99ffff"
+        }
+        },
+        {
+        "scope": "string.softer_cyan",
+        "settings": {
+            "foreground": "#d6ecff"
+        }
+        },
+        {
+        "scope": "string.header1",
+        "settings": {
+            "foreground": "#ffdd00",
+            "fontStyle": "bold underline",
+            "fontWeight": "bolder"
+        }
+        },
+        {
+        "scope": "string.header2",
+        "settings": {
+            "foreground": "#ffdd00",
+            "fontStyle": "italic"
+        }
+        },
+        {
+        "scope": "string.evilheader1",
+        "settings": {
+            "foreground": "#ff0000",
+            "fontStyle": "bold underline",
+            "fontWeight": "bolder"
+        }
+        },
+        {
+        "scope": "string.navyblue",
+        "settings": {
+            "foreground": "#22ccff"
+        }
+        },
+        {
+        "scope": "string.extra_yellow",
+        "settings": {
+            "foreground": "#ffdd00"
+        }
+        },
+        {
+        "scope": "string.future_pink",
+        "settings": {
+            "foreground": "#ffaabb"
+        }
+        },
+        {
+        "scope": "string.os_orange",
+        "settings": {
+            "foreground": "#ffaa77"
+        }
+        },
+        {
+        "scope": "string.timestamp_yellow",
+        "settings": {
+            "foreground": "#ffffcc"
+        }
+        },
+        {
+        "scope": "string.datadog_purple",
+        "settings": {
+            "foreground": "#DDc0ff"
+        }
+        },
+        {
+        "scope": "string.crazy_purple",
+        "settings": {
+            "foreground": "#ff00ff"
+        }
+        },
+        {
+        "scope": "string.lame_grey",
+        "settings": {
+            "foreground": "#999999"
+        }
+        },
+        {
+        "scope": "string.off_white",
+        "settings": {
+            "foreground": "#fcfae6"
+        }
+        },
+        //=#=#=#=#=#=#***    AGENT LOG COLORS    ***=#=#=#=#=#=#
+        {
+            "scope": "keyword.agentlog.error",
+            "settings": {
+                "foreground": "#F44747", // Red for errors in agent.log (same as statuslog errors)
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "keyword.agentlog.warning",
+            "settings": {
+                "foreground": "#FFCC00" // Yellow for warnings in agent.log (same as statuslog warnings)
+            }
+        },
+        {
+            "scope": "keyword.agentlog.info",
+            "settings": {
+                "foreground": "#569CD6" // Blue for info in agent.log (same as statuslog info)
+            }
+        },
+        {
+            "scope": "keyword.agentlog.debug",
+            "settings": {
+                "foreground": "#9CDCFE" // Light blue for debug in agent.log (same as statuslog debug)
+            }
+        },
+        {
+            "scope": "constant.agentlog.date",
+            "settings": {
+                "foreground": "#DCDCAA" // Yellowish for dates in agent.log (same as statuslog dates)
+            }
+        },
+        {
+            "scope": "source.agentlog",
+            "settings": {
+                "foreground": "#FCFAE6"
+            }
+        },
+
+        //=#=#=#=#=#=#***  DEFAULT LOG COLORS  ***=#=#=#=#=#=#
+        {
+            "scope": "source.log", //scope for the overall log file
+            "settings": {
+              "foreground": "#dddddd"
+            }
+        },
+        {
+            "scope": "markup.changed.log.debug",
+            "settings": {
+                "foreground": "#9CDCFE" // Light blue for debug messages
+            }
+        },
+        {
+            "scope": "markup.inserted",
+            "settings": {
+                "foreground": "#569CD6" // Blue for informational messages
+            }
+        },
+        {
+            "scope": "log.info",
+            "settings": {
+                "foreground": "#569CD6" // Blue for informational messages
+            }
+        },
+        {
+            "scope": "markup.deleted",
+            "settings": {
+                "foreground": "#FFCC00" // Yellow for warnings
+            }
+        },
+        {
+            "scope": "log.warning",
+            "settings": {
+                "foreground": "#FFCC00" // Yellow for warnings
+            }
+        },
+        {
+            "scope": "comment.log.verbose",
+            "settings": {
+                "foreground": "#6A9955" // Green for verbose comments
+            }
+        },
+        {
+            "scope": "markup.changed.log.debug",
+            "settings": {
+                "foreground": "#9CDCFE" // Light blue for debug messages
+            }
+        },
+        {
+            "scope": "markup.inserted",
+            "settings": {
+                "foreground": "#569CD6" // Blue for informational messages
+            }
+        },
+        {
+            "scope": "log.info",
+            "settings": {
+                "foreground": "#569CD6" // Blue for informational messages
+            }
+        },
+        {
+            "scope": "markup.deleted",
+            "settings": {
+                "foreground": "#FFCC00" // Yellow for warnings
+            }
+        },
+        {
+            "scope": "log.warning",
+            "settings": {
+                "foreground": "#FFCC00" // Yellow for warnings
+            }
+        },
+        {
+            "scope": "strong",
+            "settings": {
+                "foreground": "#F44747", // Red for errors
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": ".log.error",
+            "settings": {
+                "foreground": "#F44747", // Red for errors
+                "fontStyle": "bold"
+            }
+        },
+        {
+            "scope": "comment.log.date",
+            "settings": {
+                "foreground": "#DCDCAA" // Yellowish for dates
+            }
+        },
+        {
+            "scope": "constant.language.log.constant",
+            "settings": {
+                "foreground": "#4EC9B0" // Teal for constants
+            }
+        },
+        {
+            "scope": "string.log.string",
+            "settings": {
+                "foreground": "#CE9178" // Orange for strings
+            }
+        },
+        {
+            "scope": "log.string",
+            "settings": {
+                "foreground": "#CE9178" // Orange for strings
+            }
+        },
+        {
+            "scope": "string.regexp.emphasis.log.exceptiontype",
+            "settings": {
+                "foreground": "#D16969", // Light red for exception types
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "string.key.emphasis.log.exception",
+            "settings": {
+                "foreground": "#D16969", // Light red for exception stack traces
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "constant.language",
+            "settings": {
+                "foreground": "#4EC9B0" // Teal for general constants
+            }
+        },
+        {
+            "scope": "constant.language.log.constant",
+            "settings": {
+                "foreground": "#4EC9B0" // Teal for log-specific constants
+            }
+        },
+        {
+            "scope": "log.date",
+            "settings": {
+                "foreground": "#CE9178" // Yellowish for dates in agent.log (same as statuslog dates)
+            }
+        },
+
+
+        /*####################################################*/
+        /*#########        YAML SECTION        ###############*/
+        /*####################################################*/
+
+        //=#=#=#=#=#=#***  DEFAULT YAML COLORS  ***=#=#=#=#=#=#
+
+        {
+            "scope": "punctuation.definition.string.begin.yaml",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for string delimiters
+            }
+        },
+        {
+            "scope": "punctuation.definition.string.end.yaml",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for string delimiters
+            }
+        },
+        {
+            "scope": "meta.map.key.yaml",
+            "settings": {
+                "foreground": "#569CD6" // Blue for map keys
+            }
+        },
+        {
+            "scope": "string.quoted.single.yaml",
+            "settings": {
+                "foreground": "#CE9178" // Orange for single-quoted strings
+            }
+        },
+        {
+            "scope": "entity.name.tag.yaml",
+            "settings": {
+                "foreground": "#FFAA77" // OS Orange
+            }
+        },
+        {
+            "scope": "meta.block.sequence.yaml",
+            "settings": {
+                "foreground": "#D08168" // Rust Orange
+            }
+        },
+        {
+            "scope": "string.unquoted.plain.out.yaml",
+            "settings": {
+                "foreground": "#FCFAE6" // Off-white
+            }
+        },
+        {
+            "scope": "constant.character.escape.single-quote.yaml",
+            "settings": {
+                "foreground": "#D7BA7D" // Gold for escape characters
+            }
+        },
+        {
+            "scope": "invalid.illegal.multiline-key.yaml",
+            "settings": {
+                "foreground": "#F44747", // Red for illegal multiline keys
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "invalid.illegal.character.yaml",
+            "settings": {
+                "foreground": "#F44747", // Red for illegal characters
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "invalid.illegal.non-printable.yaml",
+            "settings": {
+                "foreground": "#F44747", // Red for non-printable characters
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "constant.language.boolean.yaml",
+            "settings": {
+                "foreground": "#9CDCFE", // light blue
+            }
+        },
+        /*####################################################*/
+        /*#########        JSON SECTION        ###############*/
+        /*####################################################*/
+        {
+            "scope": "punctuation.definition.array.begin.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for array opening brackets
+            }
+        },
+        {
+            "scope": "punctuation.definition.array.end.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for array closing brackets
+            }
+        },
+        {
+            "scope": "punctuation.separator.array.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for array separators (commas)
+            }
+        },
+        {
+            "scope": "meta.structure.array.json",
+            "settings": {
+                "foreground": "#569CD6" // Blue for array structures
+            }
+        },
+        {
+            "scope": "punctuation.definition.dictionary.begin.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for object opening braces
+            }
+        },
+        {
+            "scope": "punctuation.definition.dictionary.end.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for object closing braces
+            }
+        },
+        {
+            "scope": "punctuation.separator.dictionary.key-value.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for key-value separators (colons)
+            }
+        },
+        {
+            "scope": "punctuation.separator.dictionary.pair.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for object pair separators (commas)
+            }
+        },
+        {
+            "scope": "meta.structure.dictionary.json",
+            "settings": {
+                "foreground": "#569CD6" // Blue for object structures
+            }
+        },
+        {
+            "scope": "string.quoted.double.json",
+            "settings": {
+                "foreground": "#CE9178" // Orange for double-quoted strings
+            }
+        },
+        {
+            "scope": "string.json support.type.property-name.json",
+            "settings": {
+                "foreground": "#9CDCFE" // Light blue for property names
+            }
+        },
+        {
+            "scope": "punctuation.support.type.property-name.begin.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for property name opening quotes
+            }
+        },
+        {
+            "scope": "punctuation.support.type.property-name.end.json",
+            "settings": {
+                "foreground": "#D4D4D4" // Light gray for property name closing quotes
+            }
+        },
+        {
+            "scope": "constant.language.json",
+            "settings": {
+                "foreground": "#569CD6" // Blue for constants like `true`, `false`, `null`
+            }
+        },
+        {
+            "scope": "constant.numeric.json",
+            "settings": {
+                "foreground": "#B5CEA8" // Green for numbers
+            }
+        },
+        {
+            "scope": "constant.character.escape.json",
+            "settings": {
+                "foreground": "#D7BA7D" // Gold for escape characters
+            }
+        },
+        {
+            "scope": "invalid.illegal.unrecognized-string-escape.json",
+            "settings": {
+                "foreground": "#F44747", // Red for unrecognized string escapes
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "invalid.illegal.expected-array-separator.json",
+            "settings": {
+                "foreground": "#F44747", // Red for missing array separators
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "invalid.illegal.expected-dictionary-separator.json",
+            "settings": {
+                "foreground": "#F44747", // Red for missing dictionary separators
+                "fontStyle": "italic"
+            }
+        },
+        {
+            "scope": "comment.block.documentation.json",
+            "settings": {
+                "foreground": "#6A9955" // Green for block documentation comments
+            }
+        },
+        {
+            "scope": "comment.block.json",
+            "settings": {
+                "foreground": "#6A9955" // Green for block comments
+            }
+        },
+        {
+            "scope": "comment.line.double-slash.js",
+            "settings": {
+                "foreground": "#6A9955" // Green for line comments
+            }
+        }
+    ]
+}

@@ -14119,7 +14119,7 @@ var {
 // src/extension.ts
 function activate(context) {
   console.log('Congratulations, your extension "flare-colorizer" is now active!');
-  const disposable = vscode.commands.registerCommand("flare-colorizer.colorize", async () => {
+  const colorizeDisposable = vscode.commands.registerCommand("flare-colorizer.colorize", async () => {
     vscode.window.showInformationMessage("Flare-colorizer has been loaded! DATADOGS UNITE!!!");
     const workspaceFolder = vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders[0].uri.fsPath : void 0;
     if (workspaceFolder) {
@@ -14172,9 +14172,16 @@ function activate(context) {
       console.log("No workspace folder is open");
     }
   });
-  context.subscriptions.push(disposable);
+  const deColorizeDisposable = vscode.commands.registerCommand("flare-colorizer.decolorize", async () => {
+    vscode.window.showInformationMessage("Flare-colorizer has been disabled! Switching to Dark+ theme.");
+    vscode.workspace.getConfiguration().update("workbench.colorTheme", "Dark+", vscode.ConfigurationTarget.Global);
+    vscode.commands.executeCommand("workbench.action.reloadWindow");
+  });
+  context.subscriptions.push(colorizeDisposable);
+  context.subscriptions.push(deColorizeDisposable);
 }
 function deactivate() {
+  console.log("Flare-colorizer has been deactivated!");
 }
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {

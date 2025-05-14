@@ -1,107 +1,102 @@
 {
-  "patterns": [
-    {
-      "name": "equalsdividers",
-      "match": "(^===$)",
-      "captures": {
-        "0": {
-          "name": "string.future_pink"
+    "name": "Configcheck Log",
+    "scopeName": "source.configcheck",
+    "patterns": [
+        {
+        "name": "equalsdividers",
+        "match": "(^===$)",
+        "captures": {
+            "0": {
+            "name": "string.future_pink"
+            }
         }
-      }
-    },
-    {
-      "name": "each check header",
-      "match": "(===)\\s(.*)\\s(check)\\s(===)",
-      "captures": {
-        "0": {
-          "name": "string.future_pink"
         },
-        "2": {
-          "name": "string.header2"
+        {
+        "name": "each check header",
+        "match": "(===)\\s(.*)\\s(check)\\s(===)",
+        "captures": {
+            "0": {
+            "name": "string.future_pink"
+            },
+            "2": {
+            "name": "string.header2"
+            },
+            "3": {
+            "name": "string.extra_yellow"
+            }
+        }
         },
-        "3": {
-          "name": "string.extra_yellow"
+        {
+        "name": "config errors header",
+        "match": "(===)\\s(Configuration errors)\\s(===)",
+        "captures": {
+            "0": {
+            "name": "string.os_orange"
+            },
+            "2": {
+            "name": "string.evilheader1"
+            }
         }
-      }
-    },
-    {
-      "name": "config errors header",
-      "match": "(===)\\s(Configuration errors)\\s(===)",
-      "captures": {
-        "0": {
-          "name": "string.os_orange"
         },
-        "2": {
-          "name": "string.evilheader1"
+        {
+        "name": "keyname",
+        "match": "^(?!(Error:)|(Config for instance ID:))(.*?):\\s",
+        "captures": {
+            "0": {
+            "name": "string.cyan"
+            }
         }
-      }
-    },
-    {
-      "name": "keyname",
-      "match": "^(?!(Error:)|(Config for instance ID:))(.*?):\\s",
-      "captures": {
-        "0": {
-          "name": "string.cyan"
-        }
-      }
-    },
-    {
-      "name": "keyname",
-      "match": "(.*instance ID?):(.*?):(.*)",
-      "captures": {
-        "1": {
-          "name": "string.cyan"
         },
-        "2": {
-          "name": "string.os_orange"
+        {
+        "name": "keyname",
+        "match": "(.*instance ID?):(.*?):(.*)",
+        "captures": {
+            "1": {
+            "name": "string.cyan"
+            },
+            "2": {
+            "name": "string.os_orange"
+            },
+            "0": {
+            "name": "string.timestamp_yellow"
+            }
+        }
         },
-        "0": {
-          "name": "string.timestamp_yellow"
+        {
+        "name": "tag keyname",
+        "match": "(^-.*):(.*)",
+        "captures": {
+            "1": {
+            "name": "string.cyan"
+            }
         }
-      }
-    },
-    {
-      "name": "tag keyname",
-      "match": "(^-.*):(.*)",
-      "captures": {
-        "1": {
-          "name": "string.cyan"
+        },
+        {
+        "name": "tag keyname2",
+        "match": "(^-.*)==(.*)",
+        "captures": {
+            "1": {
+            "name": "string.cyan"
+            }
         }
-      }
-    },
-    {
-      "name": "tag keyname2",
-      "match": "(^-.*)==(.*)",
-      "captures": {
-        "1": {
-          "name": "string.cyan"
+        },
+        {
+        "name": "section break",
+        "match": "^~$",
+        "captures": {
+            "0": {
+            "name": "string.error_red"
+            }
         }
-      }
-    },
-    {
-      "name": "section break",
-      "match": "^~$",
-      "captures": {
-        "0": {
-          "name": "string.error_red"
+        },
+        {
+        "name": "AD IDs",
+        "match": "\\*\\s_(.*)",
+        "captures": {
+            "1": {
+            "name": "string.os_orange"
+            }
         }
-      }
-    },
-    {
-      "name": "AD IDs",
-      "match": "\\*\\s_(.*)",
-      "captures": {
-        "1": {
-          "name": "string.os_orange"
         }
-      }
-    }
-  ],
-  "repository": {},
-  "fileTypes": [
-    "log"
-  ],
-  "name": "configcheck Log",
-  "scopeName": "link.configcheck"
+    ]
 }
-

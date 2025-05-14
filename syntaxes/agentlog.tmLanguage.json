@@ -1,4 +1,6 @@
 {
+    "name": "Agent Log",
+    "scopeName": "source.agentlog",
     "patterns": [
       {
         "name": "TRACE Level Log Line",
@@ -74,7 +76,7 @@
       },
       {
         "name": "Any Bad Keywords in Logs",
-        "match": "\\b(Errors|errors|Errors|error|Stop|stop|Stopped|stopped|Stopping|stopping|Kill|kill|Killed|killed|refuse|Refuse|refused|Refused|Invalid|invalid|Exit|exit|Exiting|exiting|Unexpected|unexpected|Cannot|could\\snot|cannot|Can't|can't|Unexpected|unexpected|timeout|Timeout|Timed out|timed out|Unable|unable)\\b",
+        "match": "\\b(Errors|errors|Error|error|Stop|stop|Stopped|stopped|Stopping|stopping|Kill|kill|Killed|killed|refuse|Refuse|refused|Refused|Invalid|invalid|Exit|exit|Exiting|exiting|Unexpected|unexpected|Cannot|could\\snot|cannot|Can't|can't|Unexpected|unexpected|timeout|Timeout|Timed out|timed out|Unable|unable)\\b",
         "captures": {
           "0": {
             "name": "string.gentle_error_red"
@@ -123,9 +125,6 @@
           }
         }
       }
-    ],
-    "repository": {},
-    "fileTypes": ["log"],
-    "name": "Secrets Log",
-    "scopeName": "link.log"
-  }
+      
+    ]
+}

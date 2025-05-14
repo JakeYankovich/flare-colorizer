@@ -1,0 +1,135 @@
+{
+    "name": "Status Log",
+    "scopeName": "source.statuslog",
+    "patterns": [
+        {
+            "name": "agentversion",
+            "match": "(Agent|Datadog Cluster Agent|Cluster Agent) \\((v\\d+\\.\\d+(?:\\.\\d+)?)\\)",
+            "captures": {
+              "0": {
+                "name": "string.future_pink"
+              },
+              "1": {
+                "name": "string.extra_yellow"
+              },
+              "2": {
+                "name": "string.version_color"
+              }
+            }
+          },
+          {
+            "name": "header1",
+            "match": "^Transport\\sProxy\\sWarnings|Autodiscovery|^Datadog\\sCluster\\sAgent|Collector$|JMXFetch$|JMX\\sFetch$|Forwarder|^Endpoints|APM\\sAgent|Logs\\sAgent$|Aggregator|Process\\sAgent|DogStatsD|OTLP|Remote\\sConfiguration$|System\\sProbe|Leader\\sElection|Orchestrator\\sExplorer|Cluster\\sChecks\\sDispatching|Custom\\sMetrics\\sServer|External\\sMetrics\\sEndpoints",
+            "captures": {
+              "0": {
+                "name": "string.header1"
+              }
+            }
+          },
+          {
+            "name": "evilheader1",
+            "match": "Config\\sErrors|Loading\\sErrors|(\\[ERROR\\])|\\sError\\s|ERROR|Error:",
+            "captures": {
+              "0": {
+                "name": "string.evilheader1"
+              }
+            }
+          },
+          {
+            "name": "num errors:",
+            "match": "^.*(Errors:)\\s([1-9]{1,5})",
+            "captures": {
+              "1": {
+                "name": "string.evilheader1"
+              },
+              "2": {
+                "name": "string.evilheader1"
+              }
+            }
+          },
+          {
+            "name": "header2",
+            "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers|Process\\sComponent$|Extractors$|Admission\\sController|Cache\\sStats|Orchestrator\\sEndpoints|Manifest\\sBuffer\\sStats|Manifests\\sFlushed\\sPer\\sResource",
+            "captures": {
+              "0": {
+                "name": "string.header2"
+              }
+            }
+          },
+          {
+            "name": "OK",
+            "match": "\\[OK\\]",
+            "captures": {
+              "0": {
+                "name": "string.green"
+              }
+            }
+          },
+          {
+            "name": "hyphendivers",
+            "match": "---+",
+            "captures": {
+              "0": {
+                "name": "string.green"
+              }
+            }
+          },
+          {
+            "name": "equalsdividers",
+            "match": "(==+)",
+            "captures": {
+              "0": {
+                "name": "string.future_pink"
+              }
+            }
+          },
+          {
+            "name": "windows",
+            "match": "Windows\\sServer\\s[0-9]{4}|\\b(windows|Windows)\\b(?!_)",
+            "captures": {
+              "0": {
+                "name": "string.navyblue"
+              }
+            }
+          },
+          {
+            "name": "linux",
+            "match": "linux|Linux|ubuntu|debian|rhel|redhat|darwin",
+            "captures": {
+              "0": {
+                "name": "string.os_orange"
+              }
+            }
+          },
+          {
+            "name": "keyname",
+            "match": "^(?!(Error|  hostname|    hostname):)(.*?):\\s",
+            "captures": {
+              "0": {
+                "name": "string.cyan"
+              }
+            }
+          },
+          {
+            "name": "hostname",
+            "match": "hostname: (.*)",
+            "captures": {
+              "0": {
+                "name": "string.cyan"
+              },
+              "1": {
+                "name": "string.os_orange"
+              }
+            }
+          },
+          {
+            "name": "timestamp",
+            "match": "\\b[0-9]{11,13}\\b",
+            "captures": {
+              "0": {
+                "name": "string.timestamp_yellow"
+              }
+            }
+          }
+    ]
+}

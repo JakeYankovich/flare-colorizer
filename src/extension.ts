@@ -6,7 +6,7 @@ import axios from 'axios';
 export function activate(context: vscode.ExtensionContext) {
     console.log('Congratulations, your extension "flare-colorizer" is now active!');
 
-    const disposable = vscode.commands.registerCommand('flare-colorizer.colorize', async () => {
+    const colorizeDisposable = vscode.commands.registerCommand('flare-colorizer.colorize', async () => {
         vscode.window.showInformationMessage('Flare-colorizer has been loaded! DATADOGS UNITE!!!');
 
         // Get the first workspace folder
@@ -82,9 +82,19 @@ export function activate(context: vscode.ExtensionContext) {
             console.log('No workspace folder is open');
         }
     });
-
-    context.subscriptions.push(disposable);
+    
+    const deColorizeDisposable = vscode.commands.registerCommand('flare-colorizer.decolorize', async () => {
+        vscode.window.showInformationMessage('Flare-colorizer has been disabled! Switching to Dark+ theme.');
+    
+        // Switch to the Dark+ theme
+        vscode.workspace.getConfiguration().update('workbench.colorTheme', 'Dark+', vscode.ConfigurationTarget.Global);
+    
+        // Reload the window to apply the changes
+        vscode.commands.executeCommand('workbench.action.reloadWindow');
+    });
+    context.subscriptions.push(colorizeDisposable);
+    context.subscriptions.push(deColorizeDisposable);
 }
-
 export function deactivate() {
+    console.log('Flare-colorizer has been deactivated!');
 }
