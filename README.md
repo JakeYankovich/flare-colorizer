@@ -16,3 +16,9 @@ Added high quality icon/logo
 
 ### 1.0.4
 Expand yaml coloring to better accomodate for k8s agent yaml files
+
+### 1.1.0
+Refactored the code to ensure that default highlighting still applies to basic log files,json files, and yaml files outside of flares.
+
+### 1.1.1
+Manually set colors for non-flare logs, python files, and go files. *Any* file should now be colorized with this extension to the degree it would be colored from any other extension
