@@ -4,7 +4,7 @@
   "displayName": "flare-colorizer",
   "description": "Colorizes Datadog agent flares",
   "icon": "icon.png",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "engines": {
     "vscode": "^1.96.0"
   },

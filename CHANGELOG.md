@@ -27,3 +27,6 @@ Refactored the code to ensure that default highlighting still applies to basic l
 
 1.1.1
 Manually set colors for non-flare logs, python files, and go files. *Any* file should now be colorized with this extension to the degree it would be colored from any other extension
+
+1.1.2
+Recognize "HA Agent" section

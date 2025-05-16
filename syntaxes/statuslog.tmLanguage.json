@@ -49,7 +49,7 @@
           },
           {
             "name": "header2",
-            "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers|Process\\sComponent$|Extractors$|Admission\\sController|Cache\\sStats|Orchestrator\\sEndpoints|Manifest\\sBuffer\\sStats|Manifests\\sFlushed\\sPer\\sResource",
+            "match": "Host\\sInfo|Metadata$|Hostnames$|Hostname|OTel\\smetadata|Running\\sChecks|API\\sKeys\\sstatus|Paths|Clocks|Process\\sEndpoints|Integrations$|Tailers|Process\\sComponent$|Extractors$|Admission\\sController|Cache\\sStats|Orchestrator\\sEndpoints|Manifest\\sBuffer\\sStats|Manifests\\sFlushed\\sPer\\sResource|HA\\sAgent\\sMetadata",
             "captures": {
               "0": {
                 "name": "string.header2"
